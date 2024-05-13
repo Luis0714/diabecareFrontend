@@ -1,0 +1,11 @@
+<ion-button  [style.color]="color" [style.width]="width" [disabled]="disable">
+  <div class="button__content">
+    @if(leftIcon){
+    <ion-icon  [style.color]="colorLeftIcon" class="button-icon-left" [name]="leftIcon"></ion-icon>
+    }
+    {{ text }}
+    @if(rightIcon){
+    <ion-icon [style.color]="colorRightIcon" class="button-icon-rigth" [name]="rightIcon"></ion-icon>
+    }
+  </div>
+</ion-button>

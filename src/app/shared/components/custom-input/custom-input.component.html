@@ -1,0 +1,22 @@
+<ion-item class="custom-input" lines="none">
+  @if(icon()){
+    <ion-icon slot="start" [name]="icon()"></ion-icon>
+  }
+  <ion-input [type]="type"
+  [autocomplete]="autoComplete()"
+  [label]="label()"
+  [formControl]="control"
+  labelPlacement="floating"/>
+
+  @if(isPassword){
+  <ion-button
+    onkeypress=""
+    (click)="showOrHidePassword()"
+    slot="end"
+    fill="clear"
+    shape="round">
+    <ion-icon slot="icon-only" [name]="hide ? icons.eye : icons.eyeOff"></ion-icon>
+  </ion-button>
+}
+
+</ion-item>
