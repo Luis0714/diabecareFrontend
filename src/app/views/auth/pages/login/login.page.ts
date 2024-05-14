@@ -6,14 +6,15 @@ import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/c
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
 import { CustomLogoComponent } from 'src/app/shared/components/custom-logo/custom-logo.component';
 import { CustomButtonComponent } from 'src/app/shared/components/custom-button/custom-button.component';
-import { ICONS } from 'src/app/shared/constans/icons.contants';
 import { UtilsService } from 'src/app/core/services/utils.service';
-import { MESSAGES } from 'src/app/shared/constans/messages.constans';
 import { timeout } from 'rxjs';
-import { TOAST_CONST } from 'src/app/shared/constans/toast.consts';
-import { TIMES } from 'src/app/shared/constans/times.constants';
+
+import { ICONS } from 'src/app/shared/constants/icons.constants';
+import { MESSAGES } from 'src/app/shared/constants/messages.constants';
+import { TOAST_CONST } from 'src/app/shared/constants/toast.constants';
+import { TIMES } from 'src/app/shared/constants/times.constants';
+import { BACKEND } from 'src/app/shared/constants/backend';
 import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
-import { BACKEND } from 'src/app/shared/constans/backend';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,6 @@ import { BACKEND } from 'src/app/shared/constans/backend';
     CustomButtonComponent,
     CustomLogoComponent,
     CustomCardPatientComponent,
-
   ]
 })
 export class LoginPage {

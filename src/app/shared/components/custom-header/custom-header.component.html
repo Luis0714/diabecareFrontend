@@ -1,10 +1,14 @@
+<div class="container-header">
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="#ffff">
     @if (routeBack()) {
     <ion-buttons slot="start">
       <ion-back-button [defaultHref]="routeBack()"/>
     </ion-buttons>
   }
+    <app-custom-logo heightImage="3.5rem" widthImage="3.5rem"></app-custom-logo>
     <ion-title>{{ title() }}</ion-title>
+    <ion-icon slot="end" name="notifications-outline" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
+</div>

@@ -1,45 +1,8 @@
+<app-custom-header  title="DiabeCare"></app-custom-header>
+
 <app-custom-header  title="Header Component"></app-custom-header>
 <ion-content  class="container-form" [fullscreen]="true">
-<!--
 
-<div class="container-form"></div>
-  <app-custom-logo></app-custom-logo>
-
-  <form [formGroup]="loginForm">
-    <app-custom-input
-      type="text"
-      label="Email"
-      [icon]="icons.person"
-      [control]="loginForm.controls['email']"/>
-
-    <app-custom-input
-      type="password"
-      label="Password"
-      [icon]="icons.lock"
-      [control]="loginForm.controls['password']"/>
-
-      <app-custom-button onkeypress=""
-                        [disable]="loginForm.invalid"
-                        text="Login"
-                        (click)="login()
-                        "/>
-  </form>
-
-  <app-custom-button
-  onkeypress=""
-  text="Loading"
-  (click)="loading()"/>
-
-  <app-custom-button
-  onkeypress=""
-  text="Alert toast"
-  (click)="presentAlert()"/>
-
-
-
-
-
--->
 @for (patient of patients; track patient.id) {
   <app-custom-card-patient [patient]="patient"></app-custom-card-patient>
 }
