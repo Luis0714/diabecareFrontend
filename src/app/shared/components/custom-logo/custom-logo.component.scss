@@ -1,17 +1,5 @@
-.container-logo {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.container-logo h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  color: #333;
-}
-
-.container-logo p {
-  font-size: 1rem;
-  margin: 5px 0 0;
-  color: #666;
+.container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
