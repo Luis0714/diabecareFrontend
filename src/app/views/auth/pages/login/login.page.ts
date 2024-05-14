@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon } from '@ionic/angular/standalone';
@@ -12,14 +12,17 @@ import { MESSAGES } from 'src/app/shared/constans/messages.constans';
 import { timeout } from 'rxjs';
 import { TOAST_CONST } from 'src/app/shared/constans/toast.consts';
 import { TIMES } from 'src/app/shared/constans/times.constants';
-import { HomePage } from 'src/app/views/domain/pages/home/home.page';
+import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
+import { BACKEND } from 'src/app/shared/constans/backend';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonButtons,
+  imports: [
+    IonIcon,
+    IonButtons,
     IonContent,
     IonHeader,
     IonTitle,
@@ -31,7 +34,9 @@ import { HomePage } from 'src/app/views/domain/pages/home/home.page';
     CustomInputComponent,
     CustomLogoComponent,
     CustomButtonComponent,
-    CustomLogoComponent
+    CustomLogoComponent,
+    CustomCardPatientComponent,
+
   ]
 })
 export class LoginPage {
@@ -41,6 +46,8 @@ export class LoginPage {
   messages = MESSAGES;
   toastConst = TOAST_CONST;
   times = TIMES;
+  patients = BACKEND.patients;
+
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),

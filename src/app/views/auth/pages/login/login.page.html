@@ -1,6 +1,7 @@
 <app-custom-header  title="Header Component"></app-custom-header>
-
 <ion-content  class="container-form" [fullscreen]="true">
+<!--
+
 <div class="container-form"></div>
   <app-custom-logo></app-custom-logo>
 
@@ -38,4 +39,8 @@
 
 
 
+-->
+@for (patient of patients; track patient.id) {
+  <app-custom-card-patient [patient]="patient"></app-custom-card-patient>
+}
 </ion-content>

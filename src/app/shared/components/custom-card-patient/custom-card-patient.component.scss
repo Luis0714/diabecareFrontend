@@ -1,0 +1,24 @@
+
+.icon {
+  color: #F68F5D;
+  width: 2rem;
+  height: 2rem;
+}
+
+.data{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.data p{
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.grid_container_patient_data{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

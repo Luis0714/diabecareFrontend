@@ -1,3 +1,38 @@
-<p>
-  custom-card-patient works!
-</p>
+<ion-card>
+  <img [alt]="patient.name" [src]="patient.image" />
+  <ion-card-header>
+    <div class="container_age">
+      <p>{{patient.age}} años</p>
+    </div>
+    <ion-card-title>{{patient.name}} {{patient.lastName}}</ion-card-title>
+    <ion-card-subtitle>{{patient.date | date}}</ion-card-subtitle>
+
+  </ion-card-header>
+  <ion-card-content>
+    <div class="grid_container_patient_data">
+      <div class="column">
+        <div class="data">
+          <ion-icon class="icon" [name]="icons.water" class="icon" />
+          <p>{{patient.glucoseLevel.toString()| glucosePipe}}</p>
+        </div>
+        <div class="data">
+          <ion-icon class="icon" [name]="icons.barbell" class="icon" />
+          <p>{{patient.physicalActivityHours}}</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="data">
+          <ion-icon class="icon" [name]="icons.medkit" class="icon" />
+          <p>{{patient.lastMedication}}</p>
+        </div>
+        <div class="data">
+          <ion-icon class="icon" [name]="icons.restaurant" class="icon" />
+          <p>{{patient.lastMeal}}</p>
+        </div>
+      </div>
+    </div>
+    <app-custom-button fillButton="outline" [color]="colors.orange" class="button_card" text="Crear Plan" />
+  </ion-card-content>
+
+
+</ion-card>
