@@ -9,7 +9,7 @@ import { CustomButtonComponent } from 'src/app/shared/components/custom-button/c
 import { UtilsService } from 'src/app/core/services/utils.service';
 import { timeout } from 'rxjs';
 
-import { HomePage } from 'src/app/views/domain/pages/home/home.page';
+
 import { ICONS } from 'src/app/shared/constants/icons.constants';
 import { MESSAGES } from 'src/app/shared/constants/messages.constants';
 import { TOAST_CONST } from 'src/app/shared/constants/toast.constants';
