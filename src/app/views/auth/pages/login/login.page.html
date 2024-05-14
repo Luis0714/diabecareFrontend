@@ -18,24 +18,32 @@
       [control]="loginForm.controls['password']"/>
 
       <app-custom-button onkeypress=""
+                    [leftIcon]="icons.lock"
+                    colorLeftIcon="primary"
+                    [leftIcon]="icons.lock"
+                    colorLeftIcon="primary"
                         [disable]="loginForm.invalid"
                         text="Login"
+                        type="outline"
                         (click)="login()
                         "/>
   </form>
 
   <app-custom-button
+  [leftIcon]="icons.lock"
   onkeypress=""
+  type="solid"
   text="Loading"
   (click)="loading()"/>
 
   <app-custom-button
   onkeypress=""
+  type="solid"
   text="Alert toast"
   (click)="presentAlert()"/>
 
 
 
-
+  <ion-button>Default</ion-button>
 
 </ion-content>

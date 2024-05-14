@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonButton, IonIcon } from "@ionic/angular/standalone";
 
 @Component({
@@ -10,7 +10,8 @@ import { IonButton, IonIcon } from "@ionic/angular/standalone";
     IonButton
   ]
 })
-export class CustomButtonComponent{
+export class CustomButtonComponent implements OnInit {
+
   @Input() disable: boolean = false;
   @Input() text: string = 'Button';
   @Input() color: string = '#F68F5D';
@@ -19,4 +20,18 @@ export class CustomButtonComponent{
   @Input() rightIcon: string = '';
   @Input() colorRightIcon: string = '#ffffff';
   @Input() colorLeftIcon: string = '#ffffff';
+  @Input() type: string = 'solid';
+
+  fillButton: string = 'solid';
+
+  ngOnInit(): void {
+    this.defineFillButton();
+  }
+
+
+  defineFillButton(){
+    if(this.type === 'outline'){
+      this.fillButton = 'outline';
+    }
+  }
 }

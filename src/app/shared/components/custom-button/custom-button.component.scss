@@ -1,11 +1,21 @@
 @import "src/global.scss";
-.custom-button{
+
+.solid {
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-}
-ion-button.custom-button {
   --border-color: #F68F5D;
   --border-width: 0.15em;
   --background-activated: #F68F5D;
+  --color-activated: #fff;
+}
+
+.outline {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  --border-color: #F68F5D;
+  --border-width: 0.15em;
+  --background-activated: #F68F5D;
+  --color-activated: #fff;
 }

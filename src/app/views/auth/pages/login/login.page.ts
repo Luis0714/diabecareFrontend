@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
 import { CustomLogoComponent } from 'src/app/shared/components/custom-logo/custom-logo.component';
@@ -19,7 +19,7 @@ import { HomePage } from 'src/app/views/domain/pages/home/home.page';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonButtons,
+  imports: [IonButton, IonIcon, IonButtons,
     IonContent,
     IonHeader,
     IonTitle,
@@ -31,7 +31,8 @@ import { HomePage } from 'src/app/views/domain/pages/home/home.page';
     CustomInputComponent,
     CustomLogoComponent,
     CustomButtonComponent,
-    CustomLogoComponent
+    CustomLogoComponent,
+    IonButton
   ]
 })
 export class LoginPage {
