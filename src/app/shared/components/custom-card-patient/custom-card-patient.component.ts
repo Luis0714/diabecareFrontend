@@ -3,10 +3,10 @@ import { Patient } from 'src/app/core/models/patient.model';
 import {IonCard, IonCardSubtitle, IonCardTitle,
         IonCardHeader, IonCardContent, IonIcon } from '@ionic/angular/standalone';
 import { CustomButtonComponent } from '../custom-button/custom-button.component';
-import { ICONS } from '../../constans/icons.contants';
-import { COLORS } from '../../constans/colors.constans';
 import { DatePipe } from '../../pipes/date.pipe';
 import { GlucosePipe } from '../../pipes/glucose.pipe';
+import { ICONS } from '../../constants/icons.constants';
+import { COLORS } from '../../constants/colors.constans';
 
 @Component({
   selector: 'app-custom-card-patient',
