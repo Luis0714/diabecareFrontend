@@ -13,7 +13,7 @@ import { IonButton, IonIcon } from "@ionic/angular/standalone";
 export class CustomButtonComponent{
   @Input() disable: boolean = false;
   @Input() text: string = 'Button';
-  @Input() color: string = 'primary';
+  @Input() color: string = '#F68F5D';
   @Input() width: string = '100%';
   @Input() leftIcon: string = '';
   @Input() rightIcon: string = '';
