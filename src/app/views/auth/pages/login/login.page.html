@@ -4,24 +4,27 @@
   <app-custom-logo class="logo" widthImage="10rem" heightImage="10rem"></app-custom-logo>
 
   <form [formGroup]="loginForm">
-    <app-custom-input type="text" label="Email" [icon]="icons.person" [control]="loginForm.controls['email']" />
+    <app-custom-input type="text" label="Correo electrónico" [icon]="icons.person" [control]="loginForm.controls['email']" />
 
-    <app-custom-input type="password" label="Password" [icon]="icons.lock" [control]="loginForm.controls['password']" />
+    <app-custom-input type="password" label="Contraseña" [icon]="icons.lock" [control]="loginForm.controls['password']" />
 
     <app-custom-button onkeypress="" [leftIcon]="icons.lock" colorLeftIcon="primary" [leftIcon]="icons.lock"
-      colorLeftIcon="primary" [disable]="loginForm.invalid" text="Login" type="solid" (click)="login()
+      colorLeftIcon="primary" [disable]="loginForm.invalid" text="Iniciar sesión" type="solid" (click)="login()
                         " />
   </form>
   <div class="container_text_social">
-    <p>O iniciar Sesión con: </p>
+    <p>O iniciar sesión con: </p>
   </div>
   <div class="container_buttons_socials">
     <app-custom-button [leftIcon]="icons.google" onkeypress="" type="solid" text="Google" />
 
     <app-custom-button [leftIcon]="icons.facebook" onkeypress="" type="solid" text="Faceboock" />
   </div>
-  <div class="container_text_social">
-    <p>¿No tienes cuenta? </p>
-  </div>
-  <app-custom-button [leftIcon]="icons.facebook" onkeypress="" type="outline" text="Registrate" />
+  
+  <div class="bottom_div">
+    <div class="container_text_social">
+      <p>¿No tienes cuenta?</p>
+    </div>
+    <app-custom-button onkeypress="" type="outline" text="Registrarse" />
+  </div> 
 </ion-content>
