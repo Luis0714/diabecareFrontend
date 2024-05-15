@@ -12,7 +12,7 @@ import { MESSAGES } from 'src/app/shared/constans/messages.constans';
 import { timeout } from 'rxjs';
 import { TOAST_CONST } from 'src/app/shared/constans/toast.consts';
 import { TIMES } from 'src/app/shared/constans/times.constants';
-import { HomePage } from 'src/app/views/domain/pages/home/home.page';
+
 
 @Component({
   selector: 'app-login',
