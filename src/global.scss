@@ -35,3 +35,11 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 //@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* COLOR PALETTE*/
+$PRINCIPAL_COLOR: #F68F5D;
+$SECUNDARY_COLOR: #DCDEE4;
+
+ion-icon{
+  color: $PRINCIPAL_COLOR;
+}

@@ -1,17 +1,23 @@
+@import "src/global.scss";
 .custom-input {
   --border-color: #e0e0e0;
   --border-radius: 15px;
   --border-style: solid;
   --border-width: 1px;
   margin: 20px 0;
-
+  padding-left: 1em;
+  padding-right: 1em;
   ion-label {
       position: relative;
       bottom: 2px;
   }
 
-  .eye-icon {
-      position: relative;
-      top: 13px;
+  .custom-icon {
+    position: relative;
+    font-size: 2em;
+    color: $PRINCIPAL_COLOR;
   }
+
 }
+
+

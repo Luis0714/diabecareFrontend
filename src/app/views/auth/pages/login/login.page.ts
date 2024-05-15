@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
 import { CustomLogoComponent } from 'src/app/shared/components/custom-logo/custom-logo.component';
