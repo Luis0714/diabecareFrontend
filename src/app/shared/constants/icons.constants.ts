@@ -8,5 +8,7 @@ export const ICONS = {
   barbell: 'barbell',
   restaurant: 'restaurant',
   medkit: 'medkit',
+  google: 'logo-google',
+  facebook: 'logo-facebook'
 
 }

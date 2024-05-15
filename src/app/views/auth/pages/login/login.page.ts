@@ -37,6 +37,7 @@ import { CustomCardPatientComponent } from 'src/app/shared/components/custom-car
     CustomButtonComponent,
     CustomLogoComponent,
     CustomCardPatientComponent,
+    CustomLogoComponent
   ]
 })
 export class LoginPage {

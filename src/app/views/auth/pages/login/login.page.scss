@@ -1,3 +1,5 @@
+@import 'src/global.scss';
+
 .container-form{
   width: 100%;
   display: flex;
@@ -10,4 +12,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container_text_social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_text_social p{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $SECUNDARY_COLOR;
+}
+
+.container_buttons_socials{
+  margin-bottom: 2rem;
 }
