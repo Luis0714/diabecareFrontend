@@ -23,6 +23,7 @@ export class CustomButtonComponent implements OnInit {
   @Input() type: string = 'solid';
 
   fillButton: string = 'solid';
+  classButton: string = 'custom-button';
 
   ngOnInit(): void {
     this.defineFillButton();
@@ -32,6 +33,8 @@ export class CustomButtonComponent implements OnInit {
   defineFillButton(){
     if(this.type === 'outline'){
       this.fillButton = 'outline';
+    }else{
+      this.classButton += '-solid';
     }
   }
 }

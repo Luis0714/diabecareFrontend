@@ -4,10 +4,13 @@
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-  --border-color: #F68F5D;
-  --border-width: 0.15em;
-  --background-activated: #F68F5D;
-  --color-activated: #fff;
+  --background: #F68F5D;
+  color: white !important;
+  transition: transform 0.1s ease-in-out;
+  &:active{
+    --background-activated: none !important;
+    transform: scale(0.95);
+  } 
 }
 
 .outline {
@@ -16,6 +19,10 @@
   padding-right: 1em;
   --border-color: #F68F5D;
   --border-width: 0.15em;
-  --background-activated: #F68F5D;
-  --color-activated: #fff;
+  transition: transform 0.1s ease-in-out;
+  &:active{
+    --background-activated: none !important;
+    transform: scale(0.95);
+  }
+  
 }
