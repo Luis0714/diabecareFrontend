@@ -15,6 +15,8 @@ import { TOAST_CONST } from 'src/app/shared/constants/toast.constants';
 import { TIMES } from 'src/app/shared/constants/times.constants';
 import { BACKEND } from 'src/app/shared/constants/backend';
 import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { Credentials } from 'src/app/core/models/credentials.model';
 
 @Component({
   selector: 'app-login',
@@ -43,6 +45,7 @@ import { CustomCardPatientComponent } from 'src/app/shared/components/custom-car
 export class LoginPage {
 
   utilsService = inject(UtilsService);
+  authService = inject(AuthService);
   icons = ICONS;
   messages = MESSAGES;
   toastConst = TOAST_CONST;
@@ -51,19 +54,42 @@ export class LoginPage {
 
 
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required])
   });
 
-  login(){
-    console.log(this.loginForm.value);
+  async login(){
+    const loading = await this.utilsService.loading(this.messages.info.loading);
+    if(this.loginForm.valid){
+      await loading.present();
+      const credentials = this.loginForm.value as Credentials;
+      this.authService.login(credentials).subscribe(async response => {
+        console.log("Respuesta general", response);
+        await loading.present();
+        if(response.statusCode === 202){
+          await this.utilsService.toast({
+            message: response.message,
+            duration: this.times.medium,
+            color: this.toastConst.colors.success,
+            icon: this.icons.alertCircle,
+            position: 'top'
+          });
+          loading.dismiss();
+        }else{
+          await this.utilsService.toast({
+            message: response.message,
+            duration: this.times.medium,
+            color: this.toastConst.colors.error,
+            icon: this.icons.alertCircle,
+            position: 'top'
+          });
+          loading.dismiss();
+        }
+      }
+      )
+    }
   }
 
-  async loading(){
-    const loading = await this.utilsService.loading(this.messages.info.loading);
-    timeout(this.times.long);
-    loading.dismiss();
-  }
 
   async presentAlert(){
     await this.utilsService.toast({

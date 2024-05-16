@@ -13,7 +13,6 @@ export class UtilsService {
       message: message,
       spinner: 'crescent',
     });
-    await loading.present();
     return loading;
   }
 

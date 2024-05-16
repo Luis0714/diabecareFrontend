@@ -9,6 +9,8 @@ export const ICONS = {
   restaurant: 'restaurant',
   medkit: 'medkit',
   google: 'logo-google',
-  facebook: 'logo-facebook'
+  facebook: 'logo-facebook',
+  login: 'log-in',
+  logout: 'log-out'
 
 }
