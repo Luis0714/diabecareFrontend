@@ -24,20 +24,24 @@
       type="solid" (click)="login()"/>
   </form>
   <div class="container_text_social">
-    <p>O iniciar sesión con: </p>
+    <p>O iniciar sesión con: {{tokenDevice()}}</p>
   </div>
   <div class="container_buttons_socials">
     <app-custom-button
       [leftIcon]="icons.google"
-      onkeypress=""
       type="solid"
       text="Google" />
 
     <app-custom-button
       [leftIcon]="icons.facebook"
-      onkeypress=""
       type="solid"
-      text="Faceboock" />
+      text="Faceboock"/>
+
+      <app-custom-button
+      [leftIcon]="icons.key"
+      type="solid"
+      (click)="showToken()"
+      text="Ver token del dispositivo"/>
   </div>
   <div class="bottom_div">
     <div class="container_text_social">

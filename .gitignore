@@ -68,3 +68,11 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+android/app/google-services.json
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
+android/google-services.json
+ios/App/App/google-services.json

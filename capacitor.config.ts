@@ -1,9 +1,17 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.estremor.diabemobile',
   appName: 'diabecareFrontend',
-  webDir: 'www'
+  webDir: 'www',
+  plugins: {
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"],
+    },
+  },
+  server:{
+    androidScheme: 'https'
+  }
 };
 
 export default config;

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
@@ -17,6 +17,8 @@ import { BACKEND } from 'src/app/shared/constants/backend';
 import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Credentials } from 'src/app/core/models/credentials.model';
+import { StorageServiceService } from 'src/app/storage-service.service';
+import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 
 @Component({
   selector: 'app-login',
@@ -42,15 +44,20 @@ import { Credentials } from 'src/app/core/models/credentials.model';
     CustomLogoComponent
   ]
 })
-export class LoginPage {
+export class LoginPage implements OnInit{
+  ngOnInit(): void {
+    this.getTokenDevice();
+  }
 
   utilsService = inject(UtilsService);
   authService = inject(AuthService);
+  storageService = inject(StorageServiceService);
   icons = ICONS;
   messages = MESSAGES;
   toastConst = TOAST_CONST;
   times = TIMES;
   patients = BACKEND.patients;
+  tokenDevice = signal<string>('Token');
 
 
   loginForm = new FormGroup({
@@ -99,6 +106,15 @@ export class LoginPage {
       icon: this.icons.alertCircle,
       position: 'top'
     });
+  }
+
+  async getTokenDevice(){
+  var device = await this.storageService.getItem(GENERAL_CONSTANTS.DEVICE_TOKEN);
+  this.tokenDevice.set(device?.toString() || 'Token no encontrado');
+  }
+
+  async showToken(){
+    this.utilsService.alert(this.tokenDevice());
   }
 
 

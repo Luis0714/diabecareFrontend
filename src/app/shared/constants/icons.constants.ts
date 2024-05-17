@@ -11,6 +11,6 @@ export const ICONS = {
   google: 'logo-google',
   facebook: 'logo-facebook',
   login: 'log-in',
-  logout: 'log-out'
-
+  logout: 'log-out',
+  key: 'key'
 }

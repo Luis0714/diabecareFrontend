@@ -1,4 +1,18 @@
 .toolbar{
+    display: flex;
+    align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.toolbar_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar_content .title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
 }
