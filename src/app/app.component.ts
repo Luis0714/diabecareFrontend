@@ -12,6 +12,11 @@ import { GENERAL_CONSTANTS } from './shared/constants/generals.constants';
 export class AppComponent implements OnInit {
   deviceId = '';
   storageService = inject(StorageServiceService);
+
+  // constructor() {
+  //   this.initNotifications();
+  //  }
+
   ngOnInit(): void {
     this.initNotifications();
   }

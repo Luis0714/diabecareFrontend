@@ -58,11 +58,12 @@ export class LoginPage implements OnInit{
   times = TIMES;
   patients = BACKEND.patients;
   tokenDevice = signal<string>('Token');
-
+  viewToken: boolean = false;
 
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
+    password: new FormControl('', [Validators.required]),
+    token: new FormControl('', [])
   });
 
   async login(){
@@ -114,7 +115,11 @@ export class LoginPage implements OnInit{
   }
 
   async showToken(){
-    this.utilsService.alert(this.tokenDevice());
+    await this.utilsService.alert(this.tokenDevice());
+    this.loginForm.patchValue({
+      token: this.tokenDevice() || 'Token no encontrado'
+    });
+    this.viewToken = true;
   }
 
 
