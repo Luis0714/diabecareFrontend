@@ -19,6 +19,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { Credentials } from 'src/app/core/models/credentials.model';
 import { StorageServiceService } from 'src/app/storage-service.service';
 import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
+import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 
 @Component({
   selector: 'app-login',
@@ -52,6 +53,7 @@ export class LoginPage implements OnInit{
   utilsService = inject(UtilsService);
   authService = inject(AuthService);
   storageService = inject(StorageServiceService);
+  notificationService = inject(NotificationPushService);
   icons = ICONS;
   messages = MESSAGES;
   toastConst = TOAST_CONST;
@@ -59,6 +61,7 @@ export class LoginPage implements OnInit{
   patients = BACKEND.patients;
   tokenDevice = signal<string>('Token');
   viewToken: boolean = false;
+  text = signal<string>(' -- ');
 
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.email]),
@@ -67,36 +70,40 @@ export class LoginPage implements OnInit{
   });
 
   async login(){
-    const loading = await this.utilsService.loading(this.messages.info.loading);
-    if(this.loginForm.valid){
-      await loading.present();
-      const credentials = this.loginForm.value as Credentials;
-      this.authService.login(credentials).subscribe(async response => {
-        console.log("Respuesta general", response);
-        await loading.present();
-        if(response.statusCode === 202){
-          await this.utilsService.toast({
-            message: response.message,
-            duration: this.times.medium,
-            color: this.toastConst.colors.success,
-            icon: this.icons.alertCircle,
-            position: 'top'
-          });
-          loading.dismiss();
-        }else{
-          await this.utilsService.toast({
-            message: response.message,
-            duration: this.times.medium,
-            color: this.toastConst.colors.error,
-            icon: this.icons.alertCircle,
-            position: 'top'
-          });
-          loading.dismiss();
-        }
-      }
-      )
-    }
+    this.notificationService.sendMyToken("eltoken de prueba").subscribe(response =>{
+      this.text.update(value => value + response.message);
+
+    });
+    // const loading = await this.utilsService.loading(this.messages.info.loading);
+    // if(this.loginForm.valid){
+    //   await loading.present();
+    //   const credentials = this.loginForm.value as Credentials;
+    //   this.authService.login(credentials).subscribe(async response => {
+    //     console.log("Respuesta general", response);
+    //     await loading.present();
+    //     if(response.statusCode === 202){
+    //       await this.utilsService.toast({
+    //         message: response.message,
+    //         duration: this.times.medium,
+    //         color: this.toastConst.colors.success,
+    //         icon: this.icons.alertCircle,
+    //         position: 'top'
+    //       });
+    //       loading.dismiss();
+    //     }else{
+    //       await this.utilsService.toast({
+    //         message: response.message,
+    //         duration: this.times.medium,
+    //         color: this.toastConst.colors.error,
+    //         icon: this.icons.alertCircle,
+    //         position: 'top'
+    //       });
+    //       loading.dismiss();
+    //     }
+    //   }
+    //   )
   }
+
 
 
   async presentAlert(){
@@ -115,11 +122,12 @@ export class LoginPage implements OnInit{
   }
 
   async showToken(){
-    await this.utilsService.alert(this.tokenDevice());
+
     this.loginForm.patchValue({
       token: this.tokenDevice() || 'Token no encontrado'
     });
     this.viewToken = true;
+    await this.utilsService.alert(this.tokenDevice());
   }
 
 

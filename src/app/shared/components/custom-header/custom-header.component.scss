@@ -16,3 +16,25 @@
     font-weight: 600;
     text-align: center;
 }
+
+
+.no-shadow {
+  --ion-background: transparent;
+  box-shadow: none;
+  --box-shadow: none;
+}
+
+.custom-header {
+  position: relative;
+}
+
+.custom-header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Grosor de la línea */
+  background-color: #989696; /* Color gris */
+}

@@ -15,11 +15,11 @@
       [control]="loginForm.controls['token']" />
     }
 
-    <app-custom-button onkeypress="" colorLeftIcon="primary" [disable]="loginForm.invalid" text="Iniciar sesión"
+    <app-custom-button onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
       type="solid" (click)="login()" />
   </form>
   <div class="container_text_social">
-    <p>O iniciar sesión con:</p>
+    <p>O iniciar sesión con: {{text()}}</p>
   </div>
   <div class="container_buttons_socials">
     <app-custom-button [leftIcon]="icons.google" type="solid" text="Google" />
