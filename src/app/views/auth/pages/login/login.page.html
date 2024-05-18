@@ -4,48 +4,34 @@
   <app-custom-logo class="logo" widthImage="10rem" heightImage="10rem"></app-custom-logo>
 
   <form [formGroup]="loginForm">
-    <app-custom-input
-      type="text"
-      label="Correo electrónico"
-      [icon]="icons.person"
+    <app-custom-input type="text" label="Correo electrónico" [icon]="icons.person"
       [control]="loginForm.controls['username']" />
 
-    <app-custom-input
-      type="password"
-      label="Contraseña"
-      [icon]="icons.lock"
-      [control]="loginForm.controls['password']"/>
+    <app-custom-input type="password" label="Contraseña" [icon]="icons.lock"
+      [control]="loginForm.controls['password']" />
 
-    <app-custom-button
-      onkeypress=""
-      colorLeftIcon="primary"
-      [disable]="loginForm.invalid"
-      text="Iniciar sesión"
-      type="solid" (click)="login()"/>
+    @if (viewToken) {
+    <app-custom-input type="text" label="Token del dispositivo" [icon]="icons.key"
+      [control]="loginForm.controls['token']" />
+    }
+
+    <app-custom-button onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
+      type="solid" (click)="login()" />
   </form>
   <div class="container_text_social">
-    <p>O iniciar sesión con: </p>
+    <p>O iniciar sesión con: {{text()}}</p>
   </div>
   <div class="container_buttons_socials">
-    <app-custom-button
-      [leftIcon]="icons.google"
-      onkeypress=""
-      type="solid"
-      text="Google" />
+    <app-custom-button [leftIcon]="icons.google" type="solid" text="Google" />
 
-    <app-custom-button
-      [leftIcon]="icons.facebook"
-      onkeypress=""
-      type="solid"
-      text="Faceboock" />
+    <app-custom-button [leftIcon]="icons.facebook" type="solid" text="Faceboock" />
+
+    <app-custom-button [leftIcon]="icons.key" type="solid" (click)="showToken()" text="Ver token del dispositivo" />
   </div>
   <div class="bottom_div">
     <div class="container_text_social">
       <p>¿No tienes cuenta?</p>
     </div>
-    <app-custom-button
-      onkeypress=""
-      type="outline"
-      text="Registrarse" />
+    <app-custom-button onkeypress="" type="outline" text="Registrarse" />
   </div>
 </ion-content>

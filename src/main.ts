@@ -7,6 +7,8 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 
 if (environment.production) {
   enableProdMode();
@@ -20,6 +22,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(
       withFetch(),
       //withInterceptors([NameInterceptor])
-  )
+  ), provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideMessaging(() => getMessaging())
   ],
 });
