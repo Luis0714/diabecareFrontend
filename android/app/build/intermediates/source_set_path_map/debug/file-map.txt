@@ -1,0 +1,42 @@
+com.estremor.diabemobile.app-pngs-0 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\generated\res\pngs\debug
+com.estremor.diabemobile.app-res-1 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\generated\res\processDebugGoogleServices
+com.estremor.diabemobile.app-resValues-2 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\generated\res\resValues\debug
+com.estremor.diabemobile.app-packageDebugResources-3 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.estremor.diabemobile.app-packageDebugResources-4 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.estremor.diabemobile.app-merged_res-5 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\build\intermediates\merged_res\debug
+com.estremor.diabemobile.app-debug-6 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\src\debug\res
+com.estremor.diabemobile.app-main-7 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\app\src\main\res
+com.estremor.diabemobile.app-packaged_res-8 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\android\capacitor-cordova-android-plugins\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-9 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\android\capacitor\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-10 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\app\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-11 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\haptics\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-12 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\keyboard\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-13 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\preferences\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-14 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\push-notifications\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-packaged_res-15 C:\Archivos 8° Semestre\SOFTWARE III\Proyectos\Desarrollo\diabecareFrontend\node_modules\@capacitor\status-bar\android\build\intermediates\packaged_res\debug
+com.estremor.diabemobile.app-lifecycle-viewmodel-2.6.1-16 C:\Users\Asus\.gradle\caches\transforms-3\0038249051175d23726180a950eb0b6a\transformed\lifecycle-viewmodel-2.6.1\res
+com.estremor.diabemobile.app-lifecycle-livedata-2.6.1-17 C:\Users\Asus\.gradle\caches\transforms-3\0914311d99ee650e6cf2683e681b2bc6\transformed\lifecycle-livedata-2.6.1\res
+com.estremor.diabemobile.app-annotation-experimental-1.3.0-18 C:\Users\Asus\.gradle\caches\transforms-3\0a427b536cdfcbde94b8cb64cc0afdb5\transformed\annotation-experimental-1.3.0\res
+com.estremor.diabemobile.app-emoji2-views-helper-1.2.0-19 C:\Users\Asus\.gradle\caches\transforms-3\121ba1c867d39e55c4a73860d6cded32\transformed\emoji2-views-helper-1.2.0\res
+com.estremor.diabemobile.app-fragment-1.6.2-20 C:\Users\Asus\.gradle\caches\transforms-3\173c25841d917e705cf5e62f22cf01e6\transformed\fragment-1.6.2\res
+com.estremor.diabemobile.app-lifecycle-runtime-2.6.1-21 C:\Users\Asus\.gradle\caches\transforms-3\1a34c01d24a894c79610cb2a905c3f25\transformed\lifecycle-runtime-2.6.1\res
+com.estremor.diabemobile.app-savedstate-1.2.1-22 C:\Users\Asus\.gradle\caches\transforms-3\27079e9170c3aea73b7e8a22cb10fd5e\transformed\savedstate-1.2.1\res
+com.estremor.diabemobile.app-core-ktx-1.12.0-23 C:\Users\Asus\.gradle\caches\transforms-3\2748feada60fee61bec88f777de5d6d5\transformed\core-ktx-1.12.0\res
+com.estremor.diabemobile.app-play-services-basement-18.1.0-24 C:\Users\Asus\.gradle\caches\transforms-3\31eb2cc483428983ad805dde83882dd0\transformed\play-services-basement-18.1.0\res
+com.estremor.diabemobile.app-firebase-common-20.4.2-25 C:\Users\Asus\.gradle\caches\transforms-3\32800aa5d0191816c6d1e544051984cb\transformed\firebase-common-20.4.2\res
+com.estremor.diabemobile.app-firebase-messaging-23.3.1-26 C:\Users\Asus\.gradle\caches\transforms-3\33af3683c902844b54ace614857a688a\transformed\firebase-messaging-23.3.1\res
+com.estremor.diabemobile.app-play-services-base-18.0.1-27 C:\Users\Asus\.gradle\caches\transforms-3\39862a27f563e98719cdcdb039decebd\transformed\play-services-base-18.0.1\res
+com.estremor.diabemobile.app-activity-1.8.0-28 C:\Users\Asus\.gradle\caches\transforms-3\425dad2b511b7b803177b82a0a78f826\transformed\activity-1.8.0\res
+com.estremor.diabemobile.app-webkit-1.9.0-29 C:\Users\Asus\.gradle\caches\transforms-3\493503199aa7f2b81d15b86d60fff4c3\transformed\webkit-1.9.0\res
+com.estremor.diabemobile.app-lifecycle-livedata-core-2.6.1-30 C:\Users\Asus\.gradle\caches\transforms-3\529c0237867b72c0ce591725a96c9df6\transformed\lifecycle-livedata-core-2.6.1\res
+com.estremor.diabemobile.app-coordinatorlayout-1.2.0-31 C:\Users\Asus\.gradle\caches\transforms-3\55c26a30e5310a9288a4901ef5804122\transformed\coordinatorlayout-1.2.0\res
+com.estremor.diabemobile.app-profileinstaller-1.3.0-32 C:\Users\Asus\.gradle\caches\transforms-3\74a653522b08c3867ecc07f6d364c13d\transformed\profileinstaller-1.3.0\res
+com.estremor.diabemobile.app-core-splashscreen-1.0.1-33 C:\Users\Asus\.gradle\caches\transforms-3\74a91405184659fba95cf0d3905860ca\transformed\core-splashscreen-1.0.1\res
+com.estremor.diabemobile.app-lifecycle-viewmodel-savedstate-2.6.1-34 C:\Users\Asus\.gradle\caches\transforms-3\82d05f41e6384805cb6678c53acb5b5f\transformed\lifecycle-viewmodel-savedstate-2.6.1\res
+com.estremor.diabemobile.app-appcompat-resources-1.6.1-35 C:\Users\Asus\.gradle\caches\transforms-3\8efac94b65e326d3960682f6f7232c2b\transformed\appcompat-resources-1.6.1\res
+com.estremor.diabemobile.app-startup-runtime-1.1.1-36 C:\Users\Asus\.gradle\caches\transforms-3\a62e8e48f5a9d5320ee6327231e9034a\transformed\startup-runtime-1.1.1\res
+com.estremor.diabemobile.app-core-runtime-2.2.0-37 C:\Users\Asus\.gradle\caches\transforms-3\ae1dcd7817ba36a2c3c07bf867beec4a\transformed\core-runtime-2.2.0\res
+com.estremor.diabemobile.app-emoji2-1.2.0-38 C:\Users\Asus\.gradle\caches\transforms-3\dd4cd032a46dfa2e87ab3877d03ca278\transformed\emoji2-1.2.0\res
+com.estremor.diabemobile.app-lifecycle-process-2.6.1-39 C:\Users\Asus\.gradle\caches\transforms-3\eb66895f9d1fe7aacb730e8ab1bf6c0f\transformed\lifecycle-process-2.6.1\res
+com.estremor.diabemobile.app-core-1.12.0-40 C:\Users\Asus\.gradle\caches\transforms-3\ecde674c00287c33eaebe0f9fbed5ba4\transformed\core-1.12.0\res
+com.estremor.diabemobile.app-appcompat-1.6.1-41 C:\Users\Asus\.gradle\caches\transforms-3\fcaefd8f0357122ef5a07c114ac42f0a\transformed\appcompat-1.6.1\res
