@@ -21,6 +21,7 @@ import { StorageServiceService } from 'src/app/storage-service.service';
 import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 import { Router } from '@angular/router';
+import { COLORS } from 'src/app/shared/constants/colors.constans';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +47,7 @@ import { Router } from '@angular/router';
     CustomLogoComponent,
   ]
 })
-export class LoginPage implements OnInit{
+export class LoginPage implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -60,6 +61,7 @@ export class LoginPage implements OnInit{
   notificationService = inject(NotificationPushService);
   icons = ICONS;
   messages = MESSAGES;
+  colors = COLORS;
   toastConst = TOAST_CONST;
   times = TIMES;
   patients = BACKEND.patients;
@@ -68,30 +70,28 @@ export class LoginPage implements OnInit{
   text = signal<string>(' -- ');
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     token: new FormControl('', [])
   });
 
-  async login(){
-    this.router.navigate(['/home']);
+  async login() {
     const loading = await this.utilsService.loading(this.messages.info.loading);
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       await loading.present();
       const credentials = this.loginForm.value as Credentials;
-      this.authService.login(credentials).subscribe(async response => {
+      const credential:Credentials = {
+        password: credentials.password,
+        email: credentials.email
+      }
+      this.authService.login(credential).subscribe(async response => {
         console.log("Respuesta general", response);
         await loading.present();
-        if(response.statusCode === 200){
-          console.log("Respuesta", response);
-          }else{
-          await this.utilsService.toast({
-            message: response.message,
-            duration: this.times.medium,
-            color: this.toastConst.colors.error,
-            icon: this.icons.alertCircle,
-            position: 'top'
-          });
+        if (response.statusCode === 200) {
+          this.router.navigate(['/home']);
+          loading.dismiss();
+        } else {
+          this.utilsService.presentAlert(this.messages.error.loginError, this.toastConst.colors.alert, this.icons.alertCircle);
           loading.dismiss();
         }
       }
@@ -99,29 +99,18 @@ export class LoginPage implements OnInit{
     }
   }
 
-  async presentAlert(){
-    await this.utilsService.toast({
-      message: this.messages.error.required,
-      duration: this.times.short,
-      color: this.toastConst.colors.alert,
-      icon: this.icons.alertCircle,
-      position: 'top'
-    });
+  async getTokenDevice() {
+    var device = await this.storageService.getItem(GENERAL_CONSTANTS.DEVICE_TOKEN);
+    this.tokenDevice.set(device?.toString() || 'Token no encontrado');
   }
 
-  async getTokenDevice(){
-    await this.presentAlert();
-  var device = await this.storageService.getItem(GENERAL_CONSTANTS.DEVICE_TOKEN);
-  this.tokenDevice.set(device?.toString() || 'Token no encontrado');
-  }
-
-  async showToken(){
+  async showToken() {
 
     this.loginForm.patchValue({
       token: this.tokenDevice() || 'Token no encontrado'
     });
     this.viewToken = true;
-    await this.utilsService.alert(this.tokenDevice());
+    await this.utilsService.presentAlert(this.tokenDevice(), this.toastConst.colors.alert, this.icons.alertCircle);
   }
 
 

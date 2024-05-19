@@ -39,7 +39,6 @@ export class NotificationPushService implements OnInit {
   }
 
   addListeners() {
-
     // On success, we should be able to receive notifications
     PushNotifications.addListener('registration', (token: Token) => {
       this.deviceId = token.value;

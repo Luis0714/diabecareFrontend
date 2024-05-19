@@ -4,8 +4,10 @@ export const MESSAGES = {
     email: 'Invalid email',
     password: 'Password must be at least 6 characters long',
     passwordConfirmation: 'Passwords do not match',
+    loginError: 'Please enter a valid email and password',
   },
   info: {
     loading: 'Cargando...',
+    welcome: 'Bienvenido a DiabeCare',
   }
 }

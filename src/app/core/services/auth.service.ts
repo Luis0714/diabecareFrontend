@@ -8,6 +8,7 @@ import { CustomResponse } from '../models/customresponse.models';
 import { UserLoginModel } from '../models/user.model';
 import { StorageService } from './storage.service';
 import { addToken } from '../interceptors/jwt.interceptor';
+import { TokenModel } from '../models/token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,20 +26,20 @@ export class AuthService {
   url = `${this.server}/account`;
 
 
-  login(credentials:Credentials):Observable<CustomResponse<string>>{
-    return this.http.post<CustomResponse<string>>(`${this.url}/login`, credentials).pipe(
-      tap((response:CustomResponse<string>) => {
-        this.storageService.saveToken(response.data);
+  login(credentials:Credentials):Observable<TokenModel>{
+    return this.http.post<TokenModel>(`${this.url}/login`, credentials).pipe(
+      tap((response:TokenModel) => {
+        this.storageService.saveToken(response.token);
         this.validateToken().subscribe();
       })
     );
   }
 
-  validateToken(): Observable<CustomResponse<UserLoginModel>> {
-    return this.http.get<CustomResponse<UserLoginModel>>(`${this.server}/validate_token`, { context: addToken() })
+  validateToken(): Observable<UserLoginModel> {
+    return this.http.get<UserLoginModel>(`${this.url}/validate_token`, { context: addToken() })
     .pipe(
-      tap((response:CustomResponse<UserLoginModel>) =>{
-        this.user.next(response.data)
+      tap((response:UserLoginModel) =>{
+        this.user.next(response)
       })
       );
   };
