@@ -70,42 +70,29 @@ export class LoginPage implements OnInit{
   });
 
   async login(){
-    this.text.update(value => value + 'Enviando token al servidor');
-    this.notificationService.sendMyToken("eltoken de prueba").subscribe(response =>{
-      this.text.update(value => value + response.message);
-    });
-
-    // const loading = await this.utilsService.loading(this.messages.info.loading);
-    // if(this.loginForm.valid){
-    //   await loading.present();
-    //   const credentials = this.loginForm.value as Credentials;
-    //   this.authService.login(credentials).subscribe(async response => {
-    //     console.log("Respuesta general", response);
-    //     await loading.present();
-    //     if(response.statusCode === 202){
-    //       await this.utilsService.toast({
-    //         message: response.message,
-    //         duration: this.times.medium,
-    //         color: this.toastConst.colors.success,
-    //         icon: this.icons.alertCircle,
-    //         position: 'top'
-    //       });
-    //       loading.dismiss();
-    //     }else{
-    //       await this.utilsService.toast({
-    //         message: response.message,
-    //         duration: this.times.medium,
-    //         color: this.toastConst.colors.error,
-    //         icon: this.icons.alertCircle,
-    //         position: 'top'
-    //       });
-    //       loading.dismiss();
-    //     }
-    //   }
-    //   )
+    const loading = await this.utilsService.loading(this.messages.info.loading);
+    if(this.loginForm.valid){
+      await loading.present();
+      const credentials = this.loginForm.value as Credentials;
+      this.authService.login(credentials).subscribe(async response => {
+        console.log("Respuesta general", response);
+        await loading.present();
+        if(response.statusCode === 200){
+          //Redirect to page education information
+        }else{
+          await this.utilsService.toast({
+            message: response.message,
+            duration: this.times.medium,
+            color: this.toastConst.colors.error,
+            icon: this.icons.alertCircle,
+            position: 'top'
+          });
+          loading.dismiss();
+        }
+      }
+      )
+    }
   }
-
-
 
   async presentAlert(){
     await this.utilsService.toast({
