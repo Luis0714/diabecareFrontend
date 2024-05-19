@@ -32,29 +32,10 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-//@import '@ionic/angular/css/palettes/dark.system.css';
+// @import "@ionic/angular/css/palettes/dark.always.css";
+// @import "@ionic/angular/css/palettes/dark.class.css";
+// @import '@ionic/angular/css/palettes/dark.system.css';
 
-/* COLOR PALETTE*/
-$PRINCIPAL_COLOR: #F68F5D;
-$SECUNDARY_COLOR: #A8A8A8;
 
-ion-icon{
-  color: $PRINCIPAL_COLOR;
-}
 
-// fuente
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-* {
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-  font-weight: 800; // Aplica un peso de fuente de 800 a todos los elementos h1
-}
-
-p {
-  font-weight: 300; // Aplica un peso de fuente de 300 a todos los elementos p
-}
