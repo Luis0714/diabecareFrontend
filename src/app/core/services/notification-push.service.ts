@@ -10,19 +10,22 @@ import { StorageServiceService } from 'src/app/storage-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class NotificationPushService implements OnInit{
+export class NotificationPushService implements OnInit {
   ngOnInit(): void {
     this.initNotifications();
   }
   http = inject(HttpClient);
   deviceId = '';
   storageService = inject(StorageServiceService);
-  serverUrl = `${environment.serverNotificaction}/Notification`;
+  serverUrl = `${environment.serverNotification}/Notification`;
 
   sendMyToken(token: string) {
     return this.http.get<CustomResponse<boolean>>(`${this.serverUrl}/sendToken/${token}`);
   }
 
+  // Request permission to use push notifications
+  // iOS will prompt user and return if they granted permission or not
+  // Android will just grant without prompting
   initNotifications() {
     PushNotifications.requestPermissions().then(result => {
       if (result.receive === 'granted') {
@@ -36,23 +39,34 @@ export class NotificationPushService implements OnInit{
   }
 
   addListeners() {
+
+    // On success, we should be able to receive notifications
     PushNotifications.addListener('registration', (token: Token) => {
       this.deviceId = token.value;
-      console.log('Push registration success, token: ' + token.value);
-      this.sendMyToken(token.value).subscribe(response => token.value +' - ' +response.message);
+      alert('Push registration success, token: ' + token.value);
       this.storageService.setItem(GENERAL_CONSTANTS.DEVICE_TOKEN, token.value);
     });
 
-    PushNotifications.addListener('registrationError', (error: any) => {
-      console.error('Error on registration: ' + JSON.stringify(error));
-    });
+    // Some issue with our setup and push will not work
+    PushNotifications.addListener('registrationError',
+      (error: any) => {
+        alert('Error on registration: ' + JSON.stringify(error));
+      }
+    );
 
-    PushNotifications.addListener('pushNotificationReceived', (notification: PushNotificationSchema) => {
-      console.log('Push received: ' + JSON.stringify(notification));
-    });
+    // Show us the notification payload if the app is open on our device
+    PushNotifications.addListener('pushNotificationReceived',
+      (notification: PushNotificationSchema) => {
+        alert('Push received: ' + JSON.stringify(notification));
+      }
+    );
 
-    PushNotifications.addListener('pushNotificationActionPerformed', (notification: ActionPerformed) => {
-      console.log('Push action performed: ' + JSON.stringify(notification));
-    });
+
+    // Method called when tapping on a notification
+    PushNotifications.addListener('pushNotificationActionPerformed',
+      (notification: ActionPerformed) => {
+        alert('Push action performed: ' + JSON.stringify(notification));
+      }
+    );
   }
 }

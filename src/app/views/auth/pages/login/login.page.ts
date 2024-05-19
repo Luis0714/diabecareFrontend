@@ -70,10 +70,11 @@ export class LoginPage implements OnInit{
   });
 
   async login(){
+    this.text.update(value => value + 'Enviando token al servidor');
     this.notificationService.sendMyToken("eltoken de prueba").subscribe(response =>{
       this.text.update(value => value + response.message);
-
     });
+
     // const loading = await this.utilsService.loading(this.messages.info.loading);
     // if(this.loginForm.valid){
     //   await loading.present();
@@ -117,6 +118,7 @@ export class LoginPage implements OnInit{
   }
 
   async getTokenDevice(){
+    await this.presentAlert();
   var device = await this.storageService.getItem(GENERAL_CONSTANTS.DEVICE_TOKEN);
   this.tokenDevice.set(device?.toString() || 'Token no encontrado');
   }
