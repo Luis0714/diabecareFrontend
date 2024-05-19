@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadChildren: () => import('./views/domain/domain.routes').then((m) => m.DOMAIN_ROUTES),
   },
   {
+    path: 'home',
+    loadChildren: () => import('./views/domain/domain.routes').then((m) => m.DOMAIN_ROUTES),
+  },
+  {
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full',

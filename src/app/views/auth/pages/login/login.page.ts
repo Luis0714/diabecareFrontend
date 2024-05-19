@@ -20,6 +20,7 @@ import { Credentials } from 'src/app/core/models/credentials.model';
 import { StorageServiceService } from 'src/app/storage-service.service';
 import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -42,10 +43,13 @@ import { NotificationPushService } from 'src/app/core/services/notification-push
     CustomButtonComponent,
     CustomLogoComponent,
     CustomCardPatientComponent,
-    CustomLogoComponent
+    CustomLogoComponent,
   ]
 })
 export class LoginPage implements OnInit{
+
+  constructor(private router: Router) { }
+
   ngOnInit(): void {
     this.getTokenDevice();
   }
@@ -70,6 +74,7 @@ export class LoginPage implements OnInit{
   });
 
   async login(){
+    this.router.navigate(['/home']);
     const loading = await this.utilsService.loading(this.messages.info.loading);
     if(this.loginForm.valid){
       await loading.present();
@@ -78,8 +83,8 @@ export class LoginPage implements OnInit{
         console.log("Respuesta general", response);
         await loading.present();
         if(response.statusCode === 200){
-          //Redirect to page education information
-        }else{
+          console.log("Respuesta", response);
+          }else{
           await this.utilsService.toast({
             message: response.message,
             duration: this.times.medium,

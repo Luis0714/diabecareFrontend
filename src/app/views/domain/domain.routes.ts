@@ -8,13 +8,13 @@ export const DOMAIN_ROUTES: Routes = [
     component: DomainLayoutPage,
     children: [
       {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
+        path: 'eduContent',
+        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage)
       },
       {
-        path: 'home',
-        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage)
+        path: '',
+        redirectTo: 'eduContent',
+        pathMatch: 'full'
       }
     ]
 
