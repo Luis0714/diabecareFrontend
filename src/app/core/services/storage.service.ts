@@ -29,4 +29,8 @@ export class StorageService {
     }
     return null;
   }
+
+  clearStorage(){
+    sessionStorage.clear();
+  }
 }

@@ -12,5 +12,6 @@ export const ICONS = {
   facebook: 'logo-facebook',
   login: 'log-in',
   logout: 'log-out',
+  logoutOutline: 'log-out-outline',
   key: 'key'
 }
