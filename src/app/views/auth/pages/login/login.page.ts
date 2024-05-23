@@ -85,7 +85,6 @@ export class LoginPage implements OnInit {
         email: credentials.email
       }
       this.authService.login(credential).subscribe(async response => {
-        console.log("Respuesta general", response);
         await loading.present();
         if (response.statusCode === 200) {
           this.router.navigate(['/home']);

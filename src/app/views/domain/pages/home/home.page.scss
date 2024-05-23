@@ -1,14 +1,20 @@
 .content {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: #F68F5D; 
-    font-size: 2rem; 
-    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a9988f;
+    font-size: 2rem;
+    height: 100%;
     animation-name: example;
     animation-duration: 4s;
 }
 
+.info_welcome_user{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem 1.5rem;
+}
 @keyframes example {
     0% {opacity: 0;}
     100% {opacity: 1;}

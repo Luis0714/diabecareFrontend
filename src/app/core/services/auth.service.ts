@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Credentials } from './../models/credentials.model';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -22,6 +22,8 @@ export class AuthService {
 
   user = new BehaviorSubject<UserLoginModel | null>(null);
   user$ = this.user.asObservable();
+  userLogged$ = signal<UserLoginModel | null>(null);
+  UserSignal : WritableSignal<UserLoginModel | null> = signal<UserLoginModel | null>(null);
 
   url = `${this.server}/account`;
 
@@ -40,8 +42,14 @@ export class AuthService {
     .pipe(
       tap((response:UserLoginModel) =>{
         this.user.next(response)
+        this.storageService.saveUser(response);
+        this.userLogged$.set(response);
+        this.UserSignal.set(response);
       })
       );
   };
 
+  logOut(){
+    this.storageService.clearStorage();
+  }
 }
