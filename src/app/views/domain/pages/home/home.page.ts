@@ -9,6 +9,8 @@ import { TOAST_CONST } from 'src/app/shared/constants/toast.constants';
 import { UtilsService } from 'src/app/core/services/utils.service';
 import { UserLoginModel } from './../../../../core/models/user.model';
 import { StorageService } from 'src/app/core/services/storage.service';
+import { delay, map, retryWhen, switchMap } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +30,7 @@ export class HomePage implements OnInit {
   storageService = inject(StorageService);
 
   user!: UserLoginModel | null;
-  constructor() {   this.showWelcomeMessage(); }
+  constructor() { this.getUserLogged();  this.showWelcomeMessage(); }
 
   ngOnInit() {
     this.getUserLogged();

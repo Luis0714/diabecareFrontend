@@ -22,6 +22,7 @@ import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 import { Router } from '@angular/router';
 import { COLORS } from 'src/app/shared/constants/colors.constans';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -53,6 +54,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit(): void {
     this.getTokenDevice();
+    this.text.set(environment.server);
   }
 
   utilsService = inject(UtilsService);
