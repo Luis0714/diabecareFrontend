@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estremor.diabemobile.app-mergeDebugResources-3:/values-land/values-land.xml",
+            "outputFile": "com.estremor.diabemobile.app-mergeDebugResources-29:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Asus\\.gradle\\caches\\transforms-3\\fcaefd8f0357122ef5a07c114ac42f0a\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\yairc\\.gradle\\caches\\transforms-3\\51077ed9aace34fdbe630f7ff7c61ee3\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

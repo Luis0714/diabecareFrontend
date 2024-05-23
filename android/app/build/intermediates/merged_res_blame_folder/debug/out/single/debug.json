@@ -1,202 +1,274 @@
 [
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable/ic_launcher_background.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-land-xhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-land-xhdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_diabecare_ic_launcher.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/diabecare_ic_launcher.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-land-hdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-land-hdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare_new_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare_new_round.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/layout_activity_main.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/layout/activity_main.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare_new.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare_new.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_diabecare_ic_launcher.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/diabecare_ic_launcher.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-land-xxxhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-land-xxxhdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-anydpi-v26_diabecare_ic_launcher_round.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-anydpi-v26/diabecare_ic_launcher_round.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare_new_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare_new_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-port-mdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-port-mdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable_ic_logo_diabecare_background.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable/ic_logo_diabecare_background.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-land-mdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-land-mdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-anydpi-v26_diabecare_ic_launcher.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-anydpi-v26/diabecare_ic_launcher.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare_new.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare_new.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-land-xhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-land-xhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-port-hdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-port-hdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_diabecare_ic_launcher_round.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/diabecare_ic_launcher_round.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare_round.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-port-xxxhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-port-xxxhdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-land-xxhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-land-xxhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/xml_config.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/xml/config.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare_new_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare_new_round.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_logo_diabecare_round.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_logo_diabecare_round.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-port-xhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-port-xhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_logo_diabecare_new_round.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_logo_diabecare_new_round.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.estremor.diabemobile.app-pngs-0:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare_round.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-land-xxxhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-land-xxxhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_diabecare_ic_launcher_foreground.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/diabecare_ic_launcher_foreground.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_logo_diabecare.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_logo_diabecare.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-port-xhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-port-xhdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/xml_file_paths.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/xml/file_paths.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_diabecare_ic_launcher.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/diabecare_ic_launcher.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare_new_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare_new_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_diabecare_ic_launcher_round.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/diabecare_ic_launcher_round.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-port-hdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-port-hdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_diabecare_ic_launcher.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/diabecare_ic_launcher.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-port-mdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-port-mdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_diabecare_ic_launcher.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/diabecare_ic_launcher.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_diabecare_ic_launcher_round.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/diabecare_ic_launcher_round.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_diabecare_ic_launcher_foreground.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/diabecare_ic_launcher_foreground.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-land-hdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-land-hdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/xml_config.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/xml/config.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_diabecare_ic_launcher_round.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/diabecare_ic_launcher_round.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare_new_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare_new_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_diabecare_ic_launcher_foreground.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/diabecare_ic_launcher_foreground.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-land-mdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-land-mdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.estremor.diabemobile.app-pngs-26:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-port-xxhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-port-xxhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/layout/activity_main.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_diabecare_ic_launcher_foreground.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/diabecare_ic_launcher_foreground.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare_new.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare_new.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare_new_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare_new_foreground.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-hdpi_diabecare_ic_launcher_foreground.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-hdpi/diabecare_ic_launcher_foreground.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare_new.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare_new.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-port-xxhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-port-xxhdpi/splash.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare.webp"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/mipmap-xhdpi_diabecare_ic_launcher_round.webp.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/mipmap-xhdpi/diabecare_ic_launcher_round.webp"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.estremor.diabemobile.app-merged_res-5:/drawable-port-xxxhdpi_splash.png.flat",
-        "source": "com.estremor.diabemobile.app-main-7:/drawable-port-xxxhdpi/splash.png"
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare_foreground.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare_new_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare_new_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable-land-xxhdpi_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable-land-xxhdpi/splash.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_logo_diabecare_new_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_logo_diabecare_new_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-anydpi-v26_ic_logo_diabecare_new.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-anydpi-v26/ic_logo_diabecare_new.xml"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-mdpi_ic_logo_diabecare_new_foreground.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-mdpi/ic_logo_diabecare_new_foreground.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxhdpi_ic_logo_diabecare_new.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxhdpi/ic_logo_diabecare_new.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/xml_file_paths.xml.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_logo_diabecare_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_logo_diabecare_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare_new_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare_new_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_logo_diabecare_round.webp.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_logo_diabecare_round.webp"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.estremor.diabemobile.app-merged_res-31:/drawable_splash.png.flat",
+        "source": "com.estremor.diabemobile.app-main-33:/drawable/splash.png"
     }
 ]

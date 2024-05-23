@@ -1,17 +1,22 @@
 R_DEF: Internal format may change without notice
 local
-color diabecare_ic_launcher_background
 color ic_launcher_background
+color ic_logo_diabecare_background
+color ic_logo_diabecare_new_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_logo_diabecare_background
 drawable splash
 layout activity_main
-mipmap diabecare_ic_launcher
-mipmap diabecare_ic_launcher_foreground
-mipmap diabecare_ic_launcher_round
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+mipmap ic_logo_diabecare
+mipmap ic_logo_diabecare_foreground
+mipmap ic_logo_diabecare_new
+mipmap ic_logo_diabecare_new_foreground
+mipmap ic_logo_diabecare_new_round
+mipmap ic_logo_diabecare_round
 string app_name
 string custom_url_scheme
 string gcm_defaultSenderId

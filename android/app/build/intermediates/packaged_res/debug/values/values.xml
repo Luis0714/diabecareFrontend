@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="diabecare_ic_launcher_background">#FFFFFF</color>
     <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="ic_logo_diabecare_background">#579DBB</color>
+    <color name="ic_logo_diabecare_new_background">#579DBB</color>
     <string name="app_name">DiabeCare</string>
     <string name="custom_url_scheme">com.estremor.diabemobile</string>
     <string name="gcm_defaultSenderId" translatable="false">94029566724</string>
@@ -11,7 +12,7 @@
     <string name="google_storage_bucket" translatable="false">diabecare-push-notification-p.appspot.com</string>
     <string name="package_name">com.estremor.diabemobile</string>
     <string name="project_id" translatable="false">diabecare-push-notification-p</string>
-    <string name="title_activity_main">diabecareFrontend</string>
+    <string name="title_activity_main">DiabeCare</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
