@@ -39,8 +39,8 @@ export class UtilsService {
   }
 
 
-  async presentAlert(message: string, color: string, icon: string) {
-    await this.toast({
+  presentAlert(message: string, color: string, icon: string): Promise<void> {
+    return this.toast({
       message: message,
       duration: this.times.short,
       color: color,

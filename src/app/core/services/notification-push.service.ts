@@ -30,8 +30,9 @@ export class NotificationPushService implements OnInit {
     PushNotifications.requestPermissions().then(result => {
       if (result.receive === 'granted') {
         PushNotifications.register();
+        console.log('Permission granted');
       } else {
-        console.error('Permission denied');
+        console.log('Permission denied');
       }
     });
 
@@ -49,7 +50,7 @@ export class NotificationPushService implements OnInit {
     // Some issue with our setup and push will not work
     PushNotifications.addListener('registrationError',
       (error: any) => {
-        alert('Error on registration: ' + JSON.stringify(error));
+       console.log('Error on registration: ' + JSON.stringify(error));
       }
     );
 

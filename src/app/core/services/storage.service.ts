@@ -7,11 +7,11 @@ import { UserLoginModel } from '../models/user.model';
 export class StorageService {
 
   saveToken(token: string): void {
-    sessionStorage.setItem('token', token);
+    localStorage.setItem('token', token);
   }
 
   getToken(): string {
-    const token = sessionStorage.getItem('token')
+    const token = localStorage.getItem('token')
     if (token) {
       return token;
     }
@@ -19,11 +19,11 @@ export class StorageService {
   }
 
   saveUser(user: UserLoginModel){
-    sessionStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   getUser(): UserLoginModel | null {
-    const user = sessionStorage.getItem('user');
+    const user = localStorage.getItem('user');
     if (user) {
       return JSON.parse(user);
     }
@@ -31,6 +31,6 @@ export class StorageService {
   }
 
   clearStorage(){
-    sessionStorage.clear();
+    localStorage.clear();
   }
 }

@@ -15,7 +15,7 @@
       [control]="loginForm.controls['token']" />
     }
 
-    <app-custom-button onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
+    <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
       type="solid" (click)="login()" />
   </form>
   <div class="container_text_social">
@@ -32,6 +32,7 @@
     <div class="container_text_social">
       <p>¿No tienes cuenta?</p>
     </div>
-    <app-custom-button onkeypress="" type="outline" text="Registrarse" />
+    <app-custom-button id="open-loading" onkeypress="saludar()" type="outline" text="Registrarse" />
   </div>
+  <ion-loading trigger="open-loading" message="Loading..." [duration]="2000" spinner="circles"></ion-loading>
 </ion-content>

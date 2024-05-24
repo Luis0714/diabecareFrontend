@@ -28,8 +28,11 @@ export class AuthService {
 
 
   login(credentials:Credentials):Observable<TokenModel>{
+    console.log("Llega servicio login", this.url+"/login");
+    console.log("solicited login", )
     return this.http.post<TokenModel>(`${this.url}/login`, credentials).pipe(
       tap((response:TokenModel) => {
+        console.log("Response login", response);
         this.storageService.saveToken(response.token);
         this.validateToken().subscribe();
       })
@@ -42,8 +45,7 @@ export class AuthService {
       tap((response:UserLoginModel) =>{
         this.user.next(response)
         this.storageService.saveUser(response);
-        this.userLogged$.set(response);
-        this.UserSignal.set(response);
+        console.log("Response validate token", response);
       })
       );
   };

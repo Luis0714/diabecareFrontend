@@ -1,5 +1,5 @@
 <app-custom-header title="Contenido Educativo"></app-custom-header>
-<ion-content >
+<ion-content>
   <div class="container_info_welcome_user">
     <div class="info_welcome_user content">
       <div class="info_welcome_user_title">
@@ -7,7 +7,8 @@
       </div>
       <div class="info_welcome_user_content">
         <p>¡Hola! {{user?.nombre}} estas en la plataforma de contenido educativo de DiabeCare.</p>
-        <p>En esta plataforma podrás encontrar contenido educativo sobre la diabetes, para que puedas aprender de manera autónoma y a tu ritmo.</p>
+        <p>En esta plataforma podrás encontrar contenido educativo sobre la diabetes, para que puedas aprender de manera
+          autónoma y a tu ritmo.</p>
         <p>¡Esperamos que disfrutes de tu experiencia de aprendizaje!</p>
       </div>
     </div>
@@ -15,4 +16,6 @@
   <div class="content">
     Contenido educativo
   </div>
+  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-alert trigger="present-alert" header="Alert!" [buttons]="alertButtons"></ion-alert>
   <ion-content>
