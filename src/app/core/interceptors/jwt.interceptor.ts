@@ -34,6 +34,7 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.context.get(ADD_TOKEN)) {
     return addTokenToRequest(req, next);
   }
+  console.log("Request token", req.url)
   return next(req);
 };
 

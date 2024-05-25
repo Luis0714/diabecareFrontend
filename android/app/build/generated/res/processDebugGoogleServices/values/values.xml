@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="gcm_defaultSenderId" translatable="false">94029566724</string>
-    <string name="google_api_key" translatable="false">AIzaSyD5CT1oqLTSQwv-L_O0Sz3KwCVn5cKpU0s</string>
-    <string name="google_app_id" translatable="false">1:94029566724:android:08a9804c8679a8bee6b651</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD5CT1oqLTSQwv-L_O0Sz3KwCVn5cKpU0s</string>
-    <string name="google_storage_bucket" translatable="false">diabecare-push-notification-p.appspot.com</string>
-    <string name="project_id" translatable="false">diabecare-push-notification-p</string>
-</resources>

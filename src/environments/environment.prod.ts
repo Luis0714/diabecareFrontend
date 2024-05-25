@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  server: 'http://localhost:8000',
+  server: 'https://diabecarebackend.azurewebsites.net',
+  localServer: 'https://localhost:8000',
   serverNotification: 'https://localhost:7213/api',
   firebaseConfig: {
     projectId: "diabecare-push-notification-p",

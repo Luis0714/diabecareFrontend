@@ -1,7 +1,10 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
-
+*.jar
+/.jar
 *~
+*.probe
+*.bin
 *.sw[mnpcod]
 .tmp
 *.tmp
@@ -31,6 +34,8 @@ log.txt
 
 # Node
 /node_modules
+/android
+/ios
 npm-debug.log
 yarn-error.log
 
@@ -76,3 +81,6 @@ android/app/google-services.json
 .runtimeconfig.json
 android/google-services.json
 ios/App/App/google-services.json
+android/
+i
+ios/

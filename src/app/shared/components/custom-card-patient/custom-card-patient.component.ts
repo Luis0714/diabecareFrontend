@@ -7,6 +7,8 @@ import { DatePipe } from '../../pipes/date.pipe';
 import { GlucosePipe } from '../../pipes/glucose.pipe';
 import { ICONS } from '../../constants/icons.constants';
 import { COLORS } from '../../constants/colors.constans';
+import { AgePipe } from '../../pipes/age.pipe';
+import { HoursPipe } from '../../pipes/hours.pipe';
 
 @Component({
   selector: 'app-custom-card-patient',
@@ -22,7 +24,9 @@ import { COLORS } from '../../constants/colors.constans';
     IonIcon,
     CustomButtonComponent,
     DatePipe,
-    GlucosePipe
+    GlucosePipe,
+    AgePipe,
+    HoursPipe
   ]
 })
 export class CustomCardPatientComponent  implements OnInit {
@@ -30,6 +34,6 @@ export class CustomCardPatientComponent  implements OnInit {
   @Input({required: true}) patient!: Patient;
   icons = ICONS;
   colors = COLORS;
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

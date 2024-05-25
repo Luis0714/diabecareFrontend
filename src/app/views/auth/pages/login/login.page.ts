@@ -1,13 +1,12 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonToast, IonLoading, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
 import { CustomLogoComponent } from 'src/app/shared/components/custom-logo/custom-logo.component';
 import { CustomButtonComponent } from 'src/app/shared/components/custom-button/custom-button.component';
 import { UtilsService } from 'src/app/core/services/utils.service';
-import { timeout } from 'rxjs';
 
 import { ICONS } from 'src/app/shared/constants/icons.constants';
 import { MESSAGES } from 'src/app/shared/constants/messages.constants';
@@ -22,6 +21,7 @@ import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 import { Router } from '@angular/router';
 import { COLORS } from 'src/app/shared/constants/colors.constans';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +34,7 @@ import { COLORS } from 'src/app/shared/constants/colors.constans';
     IonContent,
     IonHeader,
     IonTitle,
+    IonLoading,
     IonToolbar,
     CommonModule,
     FormsModule,
@@ -53,6 +54,8 @@ export class LoginPage implements OnInit {
 
   ngOnInit(): void {
     this.getTokenDevice();
+    this.text.set(environment.server);
+    console.log("Funcionando...");
   }
 
   utilsService = inject(UtilsService);
@@ -75,23 +78,28 @@ export class LoginPage implements OnInit {
     token: new FormControl('', [])
   });
 
-  async login() {
-    const loading = await this.utilsService.loading(this.messages.info.loading);
+   login() {
+    console.log('login');
+    this.text.set('login');
+    //const loading = await this.utilsService.loading(this.messages.info.loading);
+
+    console.log("Formulario valido", this.loginForm.valid);
     if (this.loginForm.valid) {
-      await loading.present();
+      //await loading.present();
       const credentials = this.loginForm.value as Credentials;
       const credential:Credentials = {
         password: credentials.password,
         email: credentials.email
       }
+      console.log("Credenciales", credential);
       this.authService.login(credential).subscribe(async response => {
-        await loading.present();
+      //  await loading.present();
         if (response.statusCode === 200) {
           this.router.navigate(['/home']);
-          loading.dismiss();
+       //   loading.dismiss();
         } else {
           this.utilsService.presentAlert(this.messages.error.loginError, this.toastConst.colors.alert, this.icons.alertCircle);
-          loading.dismiss();
+        //  loading.dismiss();
         }
       }
       )
@@ -112,5 +120,9 @@ export class LoginPage implements OnInit {
     await this.utilsService.presentAlert(this.tokenDevice(), this.toastConst.colors.alert, this.icons.alertCircle);
   }
 
+
+  saludar(){
+    this.text.set("saludo!!");
+  }
 
 }
