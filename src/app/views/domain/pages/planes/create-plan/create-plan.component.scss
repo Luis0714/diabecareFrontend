@@ -1,0 +1,43 @@
+.container_info_welcome_user {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .form {
+    padding: 20px;
+    align-items: start;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+  }
+  
+  .container_cards {
+    margin-top: 20px;
+  }
+  
+  .container_empty {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .custom-input {
+    border: 1px solid #d3d3d3; 
+    padding: 1em; 
+    margin: 1em;
+    margin-right: 1em;
+    width: 90%;
+    border-radius: 1em;
+    height: 50vh;
+  }
+
+  .ion-textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black; /* Cambia a cualquier color que necesites */
+    opacity: 1; /* Firefox */
+  }

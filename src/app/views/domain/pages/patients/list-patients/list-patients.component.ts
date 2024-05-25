@@ -42,7 +42,7 @@ export class ListPatientsComponent  implements OnInit {
       this.patientsService.getPatientsByUserProfesional(this.user.usuarioId).subscribe((patients) => {
         for (let index = 0; index < patients.data.length; index++) {
           let patient: Patient = {
-            
+              patientId: patients.data[index].patient_id,
               name: patients.data[index].name,
               lastName: patients.data[index].last_name,
               date: patients.data[index].date,
