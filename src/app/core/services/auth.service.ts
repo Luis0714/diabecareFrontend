@@ -16,7 +16,6 @@ export class AuthService {
 
   http = inject(HttpClient);
   storageService = inject(StorageService);
-
   server = environment.server;
 
   user = new BehaviorSubject<UserLoginModel | null>(null);
