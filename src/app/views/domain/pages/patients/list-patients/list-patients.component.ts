@@ -40,14 +40,15 @@ export class ListPatientsComponent  implements OnInit {
         for (let index = 0; index < patients.data.length; index++) {
           let patient: Patient = {
             
-              fullName: patients.data[index].nombre_completo,
-              date: patients.data[index].fecha_actualizacion,
-              photo: patients.data[index].foto,
-              age: patients.data[index].edad,
-              glucoseLevel: patients.data[index].nivel_glucosa,
-              lastMedication: patients.data[index].medicamento,
-              physicalActivityHours:patients.data[index].actividad_fisica,
-              lastMeal: patients.data[index].ultima_comida
+              name: patients.data[index].name,
+              lastName: patients.data[index].last_name,
+              date: patients.data[index].date,
+              photo: patients.data[index].photo,
+              age: patients.data[index].age,
+              glucoseLevel: patients.data[index].glucose_level,
+              lastMedication: patients.data[index].last_medication,
+              physicalActivityHours:patients.data[index].physical_activity_hours,
+              lastMeal: patients.data[index].last_meal
         }
         this.patients.push(patient);
       }

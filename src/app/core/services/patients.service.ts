@@ -15,9 +15,9 @@ export class PatientsService {
 
   server = environment.server;
 
-  url = `${this.server}/pacientes`;
+  url = `${this.server}/patients`;
   
   getPatientsByUserProfesional(userId: number): Observable<any> {
-    return this.http.get(`${this.url}/pacientes_por_profesional/${userId}`);
+    return this.http.get(`${this.url}/patients_by_health_professional/${userId}`);
   }
 }
