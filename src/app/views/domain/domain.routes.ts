@@ -17,6 +17,14 @@ export const DOMAIN_ROUTES: Routes = [
         path: '',
         redirectTo: 'eduContent',
         pathMatch: 'full'
+      },
+      {
+        path: 'patients/:id',
+        loadComponent: () => import('./pages/patients/list-patients/list-patients.component').then((m) => m.ListPatientsComponent),
+      },
+      {
+        path: 'create-plan',
+        loadComponent: () => import('./pages/planes/create-plan/create-plan.component').then((m) => m.CreatePlanComponent),
       }
     ]
 

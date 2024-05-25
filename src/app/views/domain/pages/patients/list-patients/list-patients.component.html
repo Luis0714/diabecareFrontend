@@ -1,0 +1,28 @@
+<app-custom-header title="Pacientes"></app-custom-header>
+
+<ion-content>
+  <div class="container_info_welcome_user">
+    <h1>Bienvenido, {{user?.nombre}}👋🏽</h1>
+  </div>
+  <div class="filtros">
+
+  </div>
+  <div class="container_cards">
+    @for (patient of patients; track $index) {
+      <app-custom-card-patient [patient]="patient"
+      ></app-custom-card-patient>
+    } 
+    <!-- @empty {
+      <div class="container_empty">
+        <p>No tienes pacientes asignados</p>
+      </div>
+    } -->
+  </div>
+</ion-content>
+
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>

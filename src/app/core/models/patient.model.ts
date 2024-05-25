@@ -1,15 +1,13 @@
 
 
 export interface Patient {
-  id: number;
-  name: string;
-  image: string;
-  lastName: string;
+  fullName: string;
+  photo: string;
   date: string;
   age: number;
-  birthDate: string;
   glucoseLevel: number;
   lastMedication: string;
   lastMeal: string;
   physicalActivityHours: number;
+  
 }
