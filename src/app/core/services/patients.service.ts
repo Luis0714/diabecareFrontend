@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { StorageService } from './storage.service';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Patient } from '../models/patient.model';
 import { CustomResponse } from '../models/customresponse.models';
@@ -15,9 +15,9 @@ export class PatientsService {
 
   server = environment.server;
 
-  url = `${this.server}/pacientes`;
+  url = `${this.server}/patients`;
   
   getPatientsByUserProfesional(userId: number): Observable<any> {
-    return this.http.get(`${this.url}/pacientes_por_profesional/${userId}`);
+    return this.http.get(`${this.url}/patients_by_health_professional/${userId}`);
   }
 }

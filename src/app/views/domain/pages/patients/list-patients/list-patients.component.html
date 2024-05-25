@@ -1,22 +1,26 @@
 <app-custom-header title="Pacientes"></app-custom-header>
 
 <ion-content>
-  <div class="container_info_welcome_user">
+  <div class="info_welcome_user">
     <h1>Bienvenido, {{user?.nombre}}👋🏽</h1>
   </div>
-  <div class="filtros">
-
+  <div class="header-list">
+      <p>Tus pacientes</p>
+      <select name="" id="" class="filters">
+        <option value="">Edad</option>
+        <option value="">Fecha</option>
+        <option value="">Nivel de glucosa</option>
+      </select>
   </div>
   <div class="container_cards">
     @for (patient of patients; track $index) {
       <app-custom-card-patient [patient]="patient"
       ></app-custom-card-patient>
-    } 
-    <!-- @empty {
+    } @empty {
       <div class="container_empty">
         <p>No tienes pacientes asignados</p>
       </div>
-    } -->
+    }
   </div>
 </ion-content>
 
