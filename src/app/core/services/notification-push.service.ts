@@ -25,7 +25,7 @@ export class NotificationPushService implements OnInit {
   }
 
   saveTokenDevice(tokenDevice: tokenDevice) {
-    return this.http.post<CustomResponse<boolean>>(`${this.serverBackend}/token/`,tokenDevice);
+    return this.http.post<CustomResponse<boolean>>(`${this.serverBackend}/token/token`,tokenDevice);
   }
 
   // Request permission to use push notifications
