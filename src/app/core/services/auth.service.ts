@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, WritableSignal, inject, signal } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { Credentials } from './../models/credentials.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -23,7 +23,7 @@ export class AuthService {
   userLogged$ = signal<UserLoginModel | null>(null);
   UserSignal : WritableSignal<UserLoginModel | null> = signal<UserLoginModel | null>(null);
 
-  url = `${this.server}/account`;
+  url = `${this.server}/accounts`;
 
 
   login(credentials:Credentials):Observable<TokenModel>{

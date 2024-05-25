@@ -47,11 +47,11 @@ export class HomePage implements OnInit {
   }
 
   saveToken() {
-    let usuarioId = this.storageService.getUser()?.usuarioId;
+    let userId = this.storageService.getUser()?.usuarioId;
     let token = this.storageService.getToken();
     let tokenDevice: tokenDevice = {
       token: token,
-      userId: usuarioId
+      userId: userId
     };
     this.notificationService.saveTokenDevice(tokenDevice).subscribe((res) => {
       console.log(res);

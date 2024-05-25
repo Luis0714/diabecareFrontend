@@ -17,20 +17,13 @@ export class NotificationPushService implements OnInit {
   http = inject(HttpClient);
   deviceId = '';
   storageService = inject(StorageService);
-  serverUrl = `${environment.serverNotification}/Notification`;
-  serverBackend = `${environment.server}/Notification`;
+  serverBackend = `${environment.server}/notifications`;
 
-  sendMyToken(token: string) {
-    return this.http.get<CustomResponse<boolean>>(`${this.serverUrl}/sendToken/${token}`);
-  }
 
   saveTokenDevice(tokenDevice: tokenDevice) {
-    return this.http.post<CustomResponse<boolean>>(`${this.serverBackend}/token/token`,tokenDevice);
+    return this.http.post<CustomResponse<boolean>>(`${this.serverBackend}/save_token`,tokenDevice);
   }
 
-  // Request permission to use push notifications
-  // iOS will prompt user and return if they granted permission or not
-  // Android will just grant without prompting
   initNotifications() {
     PushNotifications.requestPermissions().then(result => {
       if (result.receive === 'granted') {

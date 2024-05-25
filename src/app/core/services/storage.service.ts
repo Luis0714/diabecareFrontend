@@ -13,6 +13,13 @@ export class StorageService {
   saveDeviceToken(token: string): void {
     localStorage.setItem('deviceToken', token);
   }
+  getDeviceToken(): string {
+    const token = localStorage.getItem('deviceToken')
+    if (token) {
+      return token;
+    }
+    return '';
+  }
 
   getToken(): string {
     const token = localStorage.getItem('token')
