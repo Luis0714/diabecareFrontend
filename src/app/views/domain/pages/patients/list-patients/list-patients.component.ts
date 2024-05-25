@@ -77,7 +77,7 @@ export class ListPatientsComponent  implements OnInit {
 
       case 'glucoseLevel':
         this.patients.sort((a, b) => {
-          return a.glucoseLevel - b.glucoseLevel;
+          return b.glucoseLevel - a.glucoseLevel;
         });
         break;
     }
