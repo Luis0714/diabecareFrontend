@@ -1,4 +1,29 @@
-<p class="prueba">
-  <ion-button color="primary" (click)="goToPatients()">Patients</ion-button>
-  <ion-button color="primary" (click)="goToPlan()">Plan</ion-button>
-</p>
+<div class="container-footer">
+  <button class="footer-button" (click)="goToHome()">
+    <ion-icon slot="end" [name]="icons.home" size="large"></ion-icon>
+  </button>
+  @if (user?.rol == 2) {
+  <button class="footer-button" (click)="goToPatients()">
+    <ion-icon slot="end" [name]="icons.patients" size="large"></ion-icon>
+  </button>
+  } 
+  
+  @if (user?.rol == 1) {
+    <button class="footer-button">
+      <ion-icon slot="end" [name]="icons.planes" size="large"></ion-icon>
+    </button>
+  }
+
+  <button class="footer-button-logo">
+    <app-custom-logo heightImage="60px" widthImage="60px"> </app-custom-logo>
+  </button>
+
+  <button class="footer-button">
+    <ion-icon slot="end" [name]="icons.chat" size="large"></ion-icon>
+  </button>
+
+  <button class="footer-button">
+    <ion-icon slot="end" [name]="icons.user" size="large"></ion-icon>
+  </button>
+  
+  </div>

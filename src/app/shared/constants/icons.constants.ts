@@ -13,5 +13,10 @@ export const ICONS = {
   login: 'log-in',
   logout: 'log-out',
   logoutOutline: 'log-out-outline',
-  key: 'key'
+  key: 'key',
+  home: 'home-outline',
+  patients: 'people-outline',
+  chat: 'chatbubble-ellipses-outline',
+  user: 'person-circle-outline',
+  planes: 'id-card-outline'
 }

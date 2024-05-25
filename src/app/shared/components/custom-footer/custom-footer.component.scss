@@ -1,3 +1,30 @@
-.prueba {
-    background-color: red;
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.footer-button{
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #F68F5D;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer-button-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 100%;
+    font-size: 1rem;
+    color: #F68F5D;
+    font-weight: 600;
+    margin: 0.5rem;
 }
