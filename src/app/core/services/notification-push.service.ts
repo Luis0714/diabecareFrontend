@@ -3,8 +3,8 @@ import { Injectable, OnInit, inject } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CustomResponse } from '../models/customresponse.models';
 import { ActionPerformed, PushNotificationSchema, PushNotifications, Token } from '@capacitor/push-notifications';
-import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
-import { StorageServiceService } from 'src/app/storage-service.service';
+import { StorageService } from './storage.service';
+import { tokenDevice } from '../models/token-device.model';
 
 
 @Injectable({
@@ -16,11 +16,16 @@ export class NotificationPushService implements OnInit {
   }
   http = inject(HttpClient);
   deviceId = '';
-  storageService = inject(StorageServiceService);
+  storageService = inject(StorageService);
   serverUrl = `${environment.serverNotification}/Notification`;
+  serverBackend = `${environment.server}/Notification`;
 
   sendMyToken(token: string) {
     return this.http.get<CustomResponse<boolean>>(`${this.serverUrl}/sendToken/${token}`);
+  }
+
+  saveTokenDevice(tokenDevice: tokenDevice) {
+    return this.http.post<CustomResponse<boolean>>(`${this.serverBackend}/token/`,tokenDevice);
   }
 
   // Request permission to use push notifications
@@ -35,7 +40,6 @@ export class NotificationPushService implements OnInit {
         console.log('Permission denied');
       }
     });
-
     this.addListeners();
   }
 
@@ -44,7 +48,7 @@ export class NotificationPushService implements OnInit {
     PushNotifications.addListener('registration', (token: Token) => {
       this.deviceId = token.value;
       alert('Push registration success, token: ' + token.value);
-      this.storageService.setItem(GENERAL_CONSTANTS.DEVICE_TOKEN, token.value);
+      this.storageService.saveDeviceToken(token.value);
     });
 
     // Some issue with our setup and push will not work
