@@ -4,7 +4,7 @@
   <div class="info_welcome_user">
     <h1>Bienvenido, {{user?.nombre}}👋🏽</h1>
   </div>
-  <div class="header-list">
+    <div class="header-list">
       <p>Tus pacientes</p>
       <!-- <select name="" id="" class="filters">
         <option value="">Edad</option>
@@ -21,13 +21,14 @@
         </ion-item>
       </ion-list>
   </div>
+  
   <div class="container_cards">
     @for (patient of patients; track $index) {
       <app-custom-card-patient [patient]="patient"
       ></app-custom-card-patient>
     } @empty {
       <div class="container_empty">
-        <p>No tienes pacientes asignados</p>
+        <app-custom-not-found message="No tienes pacientes asignados"> </app-custom-not-found>
       </div>
     }
   </div>
