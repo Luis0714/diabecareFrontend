@@ -1,63 +1,71 @@
-<app-custom-header title="Contenido Educativo"></app-custom-header>
-<ion-content [scrollY]="false">
+<app-custom-header title="Educación"></app-custom-header>
+<ion-content [scrollY]="false" class="content">
   <div class="ion-content-scroll-host ion-padding">
-    <h1>Animal Facts</h1>
+    <div class="info_welcome_user">
+      <h1>Bienvenido, {{user?.nombre}}👋🏽</h1>
+    </div>
 
-    <h2>Rhinoceros</h2>
-    <img
-      alt="rhino standing near grass"
-      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/Yair Camilo's landscape - App Diagram (Latest) (2).png"
-    />
+    <h2>Diabetes: todo lo que debes saber</h2>
+    <img alt="Imagen con información sobre la diabetes"
+      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/datos-diabetes.png" />
     <p>
-      The rhinoceros gets its name from one of its most notable features: its horns. The word rhinoceros come from the
-      Greek words rhino meaning “nose” and ceros meaning “horn.” The number of horns that a rhino has varies on the
-      species. The two African species (the black rhino and the white rhino) and the Sumatran rhino have two horns,
-      while the Javan rhino and one-horned rhino have one horn.
+      ¡Hola! Si has sido diagnosticado con diabetes, no estás solo y hay mucho que puedes hacer para llevar una vida
+      saludable. La diabetes puede parecer complicada al principio, pero con un poco de conocimiento y algunas rutinas
+      saludables, es completamente manejable. Recuerda siempre cuidar tu alimentación, hacer ejercicio regularmente y
+      monitorear tus niveles de azúcar en la sangre. Habla con tu médico para encontrar el mejor plan para ti y no dudes
+      en buscar apoyo en tus seres queridos y en grupos de apoyo. Cada pequeño paso cuenta para mantenerte bien. ¡Tú
+      puedes hacerlo y estamos aquí para ayudarte!
     </p>
 
-    <h2>Sea Turtle</h2>
-    <img
-      alt="brown sea turtle in water"
-      src="https://images.unsplash.com/photo-1573551089778-46a7abc39d9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
-    />
+    <h2>Mejora tus hábitos</h2>
+    <img alt="Imagen con frutas"
+      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/diabetes-saludable.png" />
     <p>
-      Sea turtles are characterized by a large, streamlined shell and non-retractile head and limbs. Unlike other
-      turtles, sea turtles cannot pull their limbs and head inside their shells. Their limbs are flippers that are
-      adapted for swimming, so they are vulnerable while on land.
+      Comer una dieta balanceada, hacer ejercicio regularmente y controlar tus niveles de azúcar en la sangre pueden
+      marcar una gran diferencia en tu bienestar diario. Estos hábitos no solo ayudan a mantener tus niveles de azúcar
+      estables, sino que también mejoran tu salud general, te dan más energía y te hacen sentir mejor. Además, seguir
+      las indicaciones de tu médico y mantenerte informado sobre tu condición te permitirá tomar decisiones más
+      saludables. ¡Recuerda, cada buen hábito cuenta y te acerca a una vida más saludable y feliz!
     </p>
 
-    <h2>Giraffe</h2>
-    <img
-      alt="giraffe sticking its tongue out"
-      src="https://images.unsplash.com/photo-1577114995803-d8ce0e2b4aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80"
-    />
+    <h2>Maneja el estrés</h2>
+    <img alt="Mujer estresada"
+      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/diabetes-estres (1).png" />
     <p>
-      Giraffes are known for their long, tall appearance. They have a small hump on their back like a camel and have a
-      spotted pattern similar to that of a leopard. Because of the combination of these features, some people called the
-      giraffe a “camel-leopard.” That’s where the giraffe’s species name “camelopardalis” comes from.
+      El estrés puede tener un gran impacto en tus niveles de azúcar en la sangre, haciendo que suban o bajen
+      inesperadamente. Por eso, es esencial encontrar maneras efectivas de manejarlo. Practicar técnicas de relajación
+      como la meditación, el yoga o la respiración profunda puede ayudarte a mantener la calma y el control. También es
+      útil establecer una rutina diaria que incluya tiempo para ti mismo, ya sea disfrutando de un pasatiempo, leyendo
+      un buen libro o simplemente dando un paseo al aire libre. Hablar con amigos, familiares o un terapeuta sobre tus
+      preocupaciones también puede aliviar el estrés y mejorar tu bienestar emocional. ¡Recuerda, cuidar de tu mente es
+      tan importante como cuidar de tu cuerpo!
     </p>
 
-    <h2>Elephant</h2>
-    <img
-      alt="two grey elephants on grass plains during sunset"
-      src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1754&q=80"
-    />
+    <h2>Importancia del sueño</h2>
+    <img alt="Mujer durmiendo plácidamente"
+      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/diabetes-sueno.png" />
     <p>
-      Elephants are the largest existing land animal, with massive bodies, large ears, and long trunks. Elephants’ long
-      trunks are multifunctional. They are used to pick up objects, trumpet warnings, greet other elephants, or suck up
-      water for drinking or bathing.
+      Dormir bien es fundamental para mantener tus niveles de azúcar en la sangre dentro de un rango saludable. La falta
+      de sueño puede hacer que tu cuerpo sea menos eficiente en el uso de la insulina, lo que puede llevar a niveles más
+      altos de azúcar. Intenta mantener una rutina de sueño regular, acostándote y levantándote a la misma hora todos
+      los días. Crea un ambiente relajante en tu dormitorio, evita el uso de dispositivos electrónicos antes de
+      acostarte y asegúrate de que tu habitación esté oscura y tranquila. Dormir entre 7 y 9 horas por noche no solo
+      mejorará tu control de la diabetes, sino que también te dará más energía y mejorará tu estado de ánimo. ¡Un buen
+      sueño es un pilar clave para una vida saludable!
     </p>
 
-    <h2>Dolphin</h2>
-    <img
-      alt="black and white dolphin in water"
-      src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
-    />
+    <h2>Cuidado de tus pies</h2>
+    <img alt="Pies en un campo de margaritas"
+      src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/diabetes-pies.png" />
     <p>
-      Dolphins range in color depending on the species, from white, pearl, and pink to darker shades of brown, gray,
-      blue, and black. They have smooth skin, flippers, and a dorsal fin. They have a long, slender snout with about 100
-      teeth and a streamlined body. They have a single blowhole on top of their head, which has a flap that opens to
-      reveal a pair of nostrils. The dolphin uses these nostrils for breathing when it surfaces.
+      El cuidado de los pies es especialmente importante para las personas con diabetes, ya que la enfermedad puede
+      afectar la circulación y la sensibilidad en las extremidades. Inspecciona tus pies diariamente en busca de cortes,
+      ampollas, enrojecimientos o cualquier cambio que pueda indicar una infección. Lava tus pies con agua tibia y jabón
+      suave, y sécalos bien, especialmente entre los dedos. Usa crema hidratante para evitar la piel seca y agrietada,
+      pero evita aplicarla entre los dedos. Asegúrate de usar calzado cómodo y bien ajustado para prevenir heridas y
+      consulta a un podólogo regularmente. Un pequeño problema en los pies puede convertirse en algo serio si no se
+      trata adecuadamente, así que presta atención y cuida bien de tus pies para mantenerte en movimiento sin
+      complicaciones. ¡Tus pies te lo agradecerán!
     </p>
   </div>
 </ion-content>

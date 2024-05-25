@@ -1,25 +1,41 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonButton } from "@ionic/angular/standalone";
+import { IonButton, IonIcon } from "@ionic/angular/standalone";
+import { ICONS } from '../../constants/icons.constants';
+import { UserLoginModel } from 'src/app/core/models/user.model';
+import { StorageService } from 'src/app/core/services/storage.service';
+import { CustomLogoComponent } from '../custom-logo/custom-logo.component';
 
 @Component({
   selector: 'app-custom-footer',
   templateUrl: './custom-footer.component.html',
   styleUrls: ['./custom-footer.component.scss'],
   standalone: true,
-  imports: [IonButton]
+  imports: [IonIcon, IonButton, CustomLogoComponent]
 })
 export class CustomFooterComponent  implements OnInit {
-
+  icons = ICONS;
   routers = inject(Router);
-  ngOnInit() {}
+  user!: UserLoginModel | null;
+  storageService = inject(StorageService);
+  ngOnInit() {
+    this.getUserLogged();
+  }
+
+  getUserLogged() {
+    this.user =  this.storageService.getUser();
+  }
 
   goToPatients() {
-    this.routers.navigateByUrl('home/patients/1');
+    this.routers.navigateByUrl('home/patients');
   }
 
   goToPlan() {
     this.routers.navigateByUrl('home/create-plan');
+  }
+
+  goToHome() {
+    this.routers.navigateByUrl('home');
   }
 
 }

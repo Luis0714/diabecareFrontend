@@ -19,7 +19,7 @@ export const DOMAIN_ROUTES: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'patients/:id',
+        path: 'patients',
         loadComponent: () => import('./pages/patients/list-patients/list-patients.component').then((m) => m.ListPatientsComponent),
       },
       {
