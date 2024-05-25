@@ -84,3 +84,7 @@ ios/App/App/google-services.json
 android/
 i
 ios/
+src/environments/environment.prod.ts
+src/environments/environment.ts
+src/environments/environment.prod.ts
+src/environments/environment.ts
