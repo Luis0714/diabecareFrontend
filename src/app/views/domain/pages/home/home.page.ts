@@ -10,6 +10,8 @@ import { UtilsService } from 'src/app/core/services/utils.service';
 import { UserLoginModel } from './../../../../core/models/user.model';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/custom-footer.component';
+import { NotificationPushService } from 'src/app/core/services/notification-push.service';
+import { tokenDevice } from 'src/app/core/models/token-device.model';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +31,7 @@ export class HomePage implements OnInit {
 
   utilsService = inject(UtilsService);
   storageService = inject(StorageService);
+  notificationService = inject(NotificationPushService);
   isToastOpen = false;
 
 
@@ -40,6 +43,19 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getUserLogged();
+    this.saveToken();
+  }
+
+  saveToken() {
+    let userId = this.storageService.getUser()?.usuarioId;
+    let token = this.storageService.getToken();
+    let tokenDevice: tokenDevice = {
+      token: token,
+      userId: userId
+    };
+    this.notificationService.saveTokenDevice(tokenDevice).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   getUserLogged() {

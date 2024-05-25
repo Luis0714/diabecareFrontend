@@ -23,7 +23,7 @@ export class AuthService {
   userLogged$ = signal<UserLoginModel | null>(null);
   UserSignal : WritableSignal<UserLoginModel | null> = signal<UserLoginModel | null>(null);
 
-  url = `${this.server}/account`;
+  url = `${this.server}/accounts`;
 
 
   login(credentials:Credentials):Observable<TokenModel>{

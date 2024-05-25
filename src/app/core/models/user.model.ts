@@ -10,5 +10,5 @@ export interface UserLoginModel{
   ciudad: string;
   foto: string;
   fechaNacimiento: string;
-  roles: RolModel[];
+  rol: number;
 }

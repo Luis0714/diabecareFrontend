@@ -6,11 +6,20 @@
   </div>
   <div class="header-list">
       <p>Tus pacientes</p>
-      <select name="" id="" class="filters">
+      <!-- <select name="" id="" class="filters">
         <option value="">Edad</option>
         <option value="">Fecha</option>
         <option value="">Nivel de glucosa</option>
-      </select>
+      </select> -->
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Filter" interface="popover" placeholder="Filtrar por" (ionChange)="onSelectChange($event)">
+            <ion-select-option value="date">Fecha</ion-select-option>
+            <ion-select-option value="age">Edad</ion-select-option>
+            <ion-select-option value="glucoseLevel">Nivel glucosa</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
   </div>
   <div class="container_cards">
     @for (patient of patients; track $index) {
