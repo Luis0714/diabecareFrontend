@@ -1,3 +1,26 @@
-<p>
-  create-plan works!
-</p>
+<app-custom-header title="Formulario de Actividades"></app-custom-header>
+
+<ion-content>
+  <div class="container_info_welcome_user">
+    <h1>Nombre usuario</h1>
+  </div>
+  <div class="form">
+    <form [formGroup]="loginForm">
+      <app-custom-input type="text" label="Correo electrónico" [icon]="icons.person"
+        [control]="loginForm.controls['email']" />
+  
+      <app-custom-input type="password" label="Contraseña" [icon]="icons.lock"
+        [control]="loginForm.controls['password']" />
+  
+  
+      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
+        type="solid" />
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>
