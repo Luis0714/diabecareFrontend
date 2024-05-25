@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/core/models/patient.model';
 import {IonCard, IonCardSubtitle, IonCardTitle,
         IonCardHeader, IonCardContent, IonIcon } from '@ionic/angular/standalone';
@@ -34,6 +35,11 @@ export class CustomCardPatientComponent  implements OnInit {
   @Input({required: true}) patient!: Patient;
   icons = ICONS;
   colors = COLORS;
+  router = inject(Router);
   ngOnInit() { }
+
+  createPlan(){
+    this.router.navigateByUrl(`home/create-plan/${this.patient.patientId}`);
+  }
 
 }

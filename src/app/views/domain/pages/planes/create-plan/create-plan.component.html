@@ -1,3 +1,34 @@
-<p>
-  create-plan works!
-</p>
+<app-custom-header title="Crear plan"></app-custom-header>
+
+<ion-content>
+  <div class="container_info_welcome_user">
+    <h1>Nombre usuario</h1>
+  </div>
+  <div class="form">
+    <form [formGroup]="loginForm">
+      <app-custom-input type="text" label="Titulo"
+        [control]="loginForm.controls['title']" 
+      />
+
+      <!--
+        <ion-textarea class="custom-input" placeholder="Actividad"></ion-textarea>
+      -->
+      
+      <app-custom-input type="text" label="Actividad" 
+        [control]="loginForm.controls['activity']" 
+      /> 
+      <app-custom-input type="text" label="Hora" 
+        [control]="loginForm.controls['executeHour']" 
+      /> 
+  
+      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Guardar"
+        type="solid" />
+    </form>
+  </div>
+</ion-content> 
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>
