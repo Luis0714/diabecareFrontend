@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  server: 'http://127.0.0.1:8000',
-  serverNotification: 'https://localhost:7213/api',
+  server: 'http://localhost:8000',
   firebaseConfig: {
     projectId: "diabecare-push-notification-p",
     appId: "1:94029566724:web:cfbf65d40b9527fae6b651",
