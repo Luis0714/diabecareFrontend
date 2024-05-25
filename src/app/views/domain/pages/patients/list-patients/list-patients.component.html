@@ -13,10 +13,10 @@
       </select> -->
       <ion-list>
         <ion-item>
-          <ion-select aria-label="Filter" interface="popover" placeholder="Filtrar por" (ionChange)="onSelectChange($event)">
-            <ion-select-option value="date">Fecha</ion-select-option>
-            <ion-select-option value="age">Edad</ion-select-option>
-            <ion-select-option value="glucoseLevel">Nivel glucosa</ion-select-option>
+          <ion-select aria-label="Filter" interface="popover" placeholder="Ordenar por" (ionChange)="onSelectChange($event)">
+            <ion-select-option value="date">Más reciente</ion-select-option>
+            <ion-select-option value="age">Mayor edad</ion-select-option>
+            <ion-select-option value="glucoseLevel">Mayor nivel glucosa</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
