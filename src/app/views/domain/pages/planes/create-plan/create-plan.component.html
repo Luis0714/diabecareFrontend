@@ -1,4 +1,4 @@
-<app-custom-header title="Formulario de Actividades"></app-custom-header>
+<app-custom-header title="Crear plan"></app-custom-header>
 
 <ion-content>
   <div class="container_info_welcome_user">
@@ -6,18 +6,26 @@
   </div>
   <div class="form">
     <form [formGroup]="loginForm">
-      <app-custom-input type="text" label="Correo electrónico" [icon]="icons.person"
-        [control]="loginForm.controls['email']" />
+      <app-custom-input type="text" label="Titulo"
+        [control]="loginForm.controls['title']" 
+      />
+
+      <!--
+        <ion-textarea class="custom-input" placeholder="Actividad"></ion-textarea>
+      -->
+      
+      <app-custom-input type="text" label="Actividad" 
+        [control]="loginForm.controls['activity']" 
+      /> 
+      <app-custom-input type="text" label="Hora" 
+        [control]="loginForm.controls['executeHour']" 
+      /> 
   
-      <app-custom-input type="password" label="Contraseña" [icon]="icons.lock"
-        [control]="loginForm.controls['password']" />
-  
-  
-      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
+      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Guardar"
         type="solid" />
     </form>
   </div>
-</ion-content>
+</ion-content> 
 
 <ion-footer collapse="fade">
   <ion-toolbar>

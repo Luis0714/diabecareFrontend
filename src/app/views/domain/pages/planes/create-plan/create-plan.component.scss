@@ -5,6 +5,7 @@
   
   .form {
     padding: 20px;
+    align-items: start;
   }
   
   .form-group {
@@ -25,4 +26,18 @@
     text-align: center;
     margin: 20px 0;
   }
-  
+
+  .custom-input {
+    border: 1px solid #d3d3d3; 
+    padding: 1em; 
+    margin: 1em;
+    margin-right: 1em;
+    width: 90%;
+    border-radius: 1em;
+    height: 50vh;
+  }
+
+  .ion-textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black; /* Cambia a cualquier color que necesites */
+    opacity: 1; /* Firefox */
+  }
