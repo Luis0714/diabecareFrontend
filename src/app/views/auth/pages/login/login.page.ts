@@ -22,6 +22,7 @@ import { NotificationPushService } from 'src/app/core/services/notification-push
 import { Router } from '@angular/router';
 import { COLORS } from 'src/app/shared/constants/colors.constans';
 import { environment } from 'src/environments/environment.prod';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -91,6 +92,7 @@ export class LoginPage implements OnInit {
         password: credentials.password,
         email: credentials.email
       }
+      const token = this.loginForm.get('token')?.value;
       console.log("Credenciales", credential);
       this.authService.login(credential).subscribe(async response => {
       //  await loading.present();
