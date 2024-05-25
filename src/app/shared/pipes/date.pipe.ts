@@ -15,7 +15,7 @@ export class DatePipe implements PipeTransform {
 
     const nombreMes = this.getMonthByNumber(mes);
 
-    return `${dia} de ${nombreMes} del ${anio}`;
+    return `${dia} de ${nombreMes} de ${anio}`;
   }
 
   getMonthByNumber(number: number) {

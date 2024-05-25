@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/custom-footer.component';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
-import { IonContent, IonTitle, IonFooter, IonToolbar } from "@ionic/angular/standalone";
+import { IonContent, IonTitle, IonFooter, IonToolbar, IonSelect, IonSelectOption, IonLabel, IonItem, IonList } from "@ionic/angular/standalone";
 import { UserLoginModel } from 'src/app/core/models/user.model';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { Patient } from 'src/app/core/models/patient.model';
@@ -13,13 +13,15 @@ import { CustomCardPatientComponent } from 'src/app/shared/components/custom-car
   templateUrl: './list-patients.component.html',
   styleUrls: ['./list-patients.component.scss'],
   standalone: true,
-  imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar, CustomCardPatientComponent]
+  imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar, 
+  CustomCardPatientComponent, IonSelect, IonSelectOption, IonLabel, IonItem, IonList]
 })
 export class ListPatientsComponent  implements OnInit {
   user!: UserLoginModel | null;
   storageService = inject(StorageService);
   patientsService = inject(PatientsService);
   patients: Patient[] = [];
+  filter: string = 'all';
 
   constructor() { 
     this.getUserLogged();
@@ -54,5 +56,30 @@ export class ListPatientsComponent  implements OnInit {
       }
       });
     }
+  }
+
+  onSelectChange(event: any) {
+    this.filter = event.detail.value;
+    
+    switch (this.filter) {
+      case 'date':
+        this.patients.sort((a, b) => {
+          return b.date.localeCompare(a.date);
+        });
+        break;
+
+      case 'age':
+        this.patients.sort((a, b) => {
+          return b.age - a.age;
+        });
+        break;
+
+      case 'glucoseLevel':
+        this.patients.sort((a, b) => {
+          return a.glucoseLevel - b.glucoseLevel;
+        });
+        break;
+    }
+    
   }
 }
