@@ -26,7 +26,7 @@ import {  MESSAGES } from 'src/app/shared/constants/messages.constants';
   CustomInputComponent, CustomButtonComponent, IonToast]
 })
 export class CreatePlanComponent  implements OnInit {
-
+  recommendation_count: number = 0;
   icons = ICONS;
   patientId: number = 0;
   professionalId: number = 0;
@@ -72,7 +72,7 @@ export class CreatePlanComponent  implements OnInit {
   planForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
     activity: new FormControl('', [Validators.required]),
-    executeHour: new FormControl('', [Validators.required])
+    executeHour: new FormControl('', [Validators.required]),
   });
 
   ngOnInit() {
@@ -98,13 +98,19 @@ export class CreatePlanComponent  implements OnInit {
   }
 
   addRecommendation() {
-    let recommendation: Recommendation = {
-      planId: 0,
-      titulo: this.planForm.value.title ?? '',
-      actividad: this.planForm.value.activity ?? '',
-      horaEjecucion: this.planForm.value.executeHour ?? ''
+    if(this.planForm.valid){
+      let recommendation: Recommendation = {
+        planId: 0,
+        titulo: this.planForm.value.title ?? '',
+        actividad: this.planForm.value.activity ?? '',
+        horaEjecucion: this.planForm.value.executeHour ?? ''
+      }
+
+      this.recommendations.push(recommendation);
+      this.incrementCount();
+      
+      console.log(this.recommendation_count);
     }
-    this.recommendations.push(recommendation);
   }
 
   getUserLogged() {
@@ -119,17 +125,29 @@ export class CreatePlanComponent  implements OnInit {
     }
 
     console.log(plan);
+    if (this.recommendations.length != 0) {
+      this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
+        if (response.data != 0) {
+          console.log('Plan creado');
+          this.router.navigate(['/home/patients']);
+          this.message = MESSAGES.success.createPlan;
+          this.setOpen(true);
+          console.log(this.isToastOpen);
+          this.recommendation_count = 0;
+          
+        }
+      });
+    }else{
+      this.router.navigate(['/home/patients']);
+      this.message = MESSAGES.error.createPlan;
+      this.setOpen(true);
+      console.log(this.isToastOpen);
+    }
     
-    this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
-      if (response.data != 0) {
-        console.log('Plan creado');
-        this.router.navigate(['/home/patients']);
-        this.message = MESSAGES.success.createPlan;
-        this.setOpen(true);
-        console.log(this.isToastOpen);
-        
-      }
-    });
+  }
+
+  incrementCount() {
+    this.recommendation_count++;
   }
 }
 

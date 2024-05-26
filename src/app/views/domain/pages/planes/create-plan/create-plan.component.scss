@@ -1,9 +1,13 @@
 .container_info_welcome_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: left;
     padding: 20px;
     margin: 20px;
   }
-  
+
   .form {
     padding: 20px;
     align-items: start;
@@ -67,4 +71,23 @@
       --background-activated: none !important;
       transform: scale(0.95);
     }
+  }
+
+  .counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  .counter-text {
+    font-size: 1em;
+    color: #F68F5D;
+  }
+
+  .counter-number {
+    font-size: 4em;
+    color: #F68F5D;
   }
