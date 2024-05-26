@@ -5,6 +5,7 @@ import { ICONS } from '../../constants/icons.constants';
 import { UserLoginModel } from 'src/app/core/models/user.model';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { CustomLogoComponent } from '../custom-logo/custom-logo.component';
+import { ROLES } from '../../constants/roles.constants';
 
 @Component({
   selector: 'app-custom-footer',
@@ -15,6 +16,7 @@ import { CustomLogoComponent } from '../custom-logo/custom-logo.component';
 })
 export class CustomFooterComponent  implements OnInit {
   icons = ICONS;
+  roles = ROLES;
   routers = inject(Router);
   user!: UserLoginModel | null;
   storageService = inject(StorageService);

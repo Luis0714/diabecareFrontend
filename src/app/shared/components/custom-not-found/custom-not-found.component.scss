@@ -1,0 +1,19 @@
+.page-not-found-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .image-container {
+    text-align: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.title-container {
+    padding: 1rem 1.5rem;
+}

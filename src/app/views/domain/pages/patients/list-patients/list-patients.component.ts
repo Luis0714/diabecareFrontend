@@ -7,6 +7,7 @@ import { StorageService } from 'src/app/core/services/storage.service';
 import { Patient } from 'src/app/core/models/patient.model';
 import { PatientsService } from 'src/app/core/services/patients.service';
 import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
+import { CustomNotFoundComponent } from 'src/app/shared/components/custom-not-found/custom-not-found.component';
 
 @Component({
   selector: 'app-list-patients',
@@ -14,7 +15,7 @@ import { CustomCardPatientComponent } from 'src/app/shared/components/custom-car
   styleUrls: ['./list-patients.component.scss'],
   standalone: true,
   imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar, 
-  CustomCardPatientComponent, IonSelect, IonSelectOption, IonLabel, IonItem, IonList]
+  CustomCardPatientComponent, IonSelect, IonSelectOption, IonLabel, IonItem, IonList, CustomNotFoundComponent]
 })
 export class ListPatientsComponent  implements OnInit {
   user!: UserLoginModel | null;
