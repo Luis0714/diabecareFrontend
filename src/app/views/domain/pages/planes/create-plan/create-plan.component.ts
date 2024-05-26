@@ -76,7 +76,6 @@ export class CreatePlanComponent  implements OnInit {
   });
 
   ngOnInit() {
-    this.setOpen(false);
     this.getInfoPatient();
     this.getProfessionalId();
   }
@@ -105,10 +104,11 @@ export class CreatePlanComponent  implements OnInit {
         actividad: this.planForm.value.activity ?? '',
         horaEjecucion: this.planForm.value.executeHour ?? ''
       }
-
+      console.log(recommendation);
       this.recommendations.push(recommendation);
       this.incrementCount();
-      
+      this.message = MESSAGES.success.addRecommendation;
+      this.setOpen(true);
       console.log(this.recommendation_count);
     }
   }
@@ -127,11 +127,10 @@ export class CreatePlanComponent  implements OnInit {
     console.log(plan);
     if (this.recommendations.length != 0) {
       this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
-        if (response.data != 0) {
+        if (response.data) {
           console.log('Plan creado');
           this.router.navigate(['/home/patients']);
-          this.message = MESSAGES.success.createPlan;
-          this.setOpen(true);
+          this.showToast();
           console.log(this.isToastOpen);
           this.recommendation_count = 0;
           
@@ -148,6 +147,11 @@ export class CreatePlanComponent  implements OnInit {
 
   incrementCount() {
     this.recommendation_count++;
+  }
+
+  showToast() {
+    this.message = MESSAGES.success.createPlan;
+    this.setOpen(true);
   }
 }
 
