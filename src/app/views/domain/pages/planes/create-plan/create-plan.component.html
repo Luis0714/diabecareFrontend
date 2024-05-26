@@ -2,30 +2,32 @@
 
 <ion-content>
   <div class="container_info_welcome_user">
-    <h1>Nombre usuario</h1>
+    <h1>{{patientName}}</h1>
   </div>
   <div class="form">
-    <form [formGroup]="loginForm">
-      <app-custom-input type="text" label="Titulo"
-        [control]="loginForm.controls['title']" 
-      />
+    <form [formGroup]="planForm">
+      <app-custom-input type="text" label="Titulo" [control]="planForm.controls['title']" />
 
       <!--
         <ion-textarea class="custom-input" placeholder="Actividad"></ion-textarea>
       -->
-      
-      <app-custom-input type="text" label="Actividad" 
-        [control]="loginForm.controls['activity']" 
-      /> 
-      <app-custom-input type="text" label="Hora" 
-        [control]="loginForm.controls['executeHour']" 
-      /> 
-  
-      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Guardar"
-        type="solid" />
+
+      <app-custom-input type="text" label="Actividad" [control]="planForm.controls['activity']" />
+      <app-custom-input type="text" label="Hora" [control]="planForm.controls['executeHour']" />
+
+      <!-- <app-custom-button id="present-alert" (click)="addRecommendation()"  text="Agregar recomendación"
+        type="solid">
+        <ion-alert trigger="present-alert" header="¿Agregar otra recomendación?" [buttons]="alertButtons"></ion-alert>
+      </app-custom-button> -->
+
+      <ion-button id="present-alert" class="" (click)="addRecommendation()">Agregar recomendación</ion-button>
+      <ion-alert trigger="present-alert" header="¿Deseas agregar otra recomendación?" [buttons]="alertButtons">
+        <ion-toast position="top" [isOpen]="isToastOpen" [message]="message" [duration]="5000" color="success"
+          (didDismiss)="setOpen(false)"></ion-toast>
+      </ion-alert>
     </form>
   </div>
-</ion-content> 
+</ion-content>
 
 <ion-footer collapse="fade">
   <ion-toolbar>

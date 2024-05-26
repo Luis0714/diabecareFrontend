@@ -20,4 +20,8 @@ export class PatientsService {
   getPatientsByUserProfesional(userId: number): Observable<any> {
     return this.http.get(`${this.url}/patients_by_health_professional/${userId}`);
   }
+
+  getPatientById(patientId: number): Observable<any> {
+    return this.http.get(`${this.url}/patient_by_id/${patientId}`);
+  }
 }

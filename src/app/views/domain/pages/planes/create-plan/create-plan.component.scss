@@ -1,6 +1,7 @@
 .container_info_welcome_user {
-    text-align: center;
-    margin: 20px 0;
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
   }
   
   .form {
@@ -40,4 +41,30 @@
   .ion-textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black; /* Cambia a cualquier color que necesites */
     opacity: 1; /* Firefox */
+  }
+
+  ion-button {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    --background: #F68F5D !important;
+    color: white !important;
+    transition: transform 0.1s ease-in-out;
+    &:active{
+      --background-activated: none !important;
+      transform: scale(0.95);
+    }
+  }
+  
+  .outline {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    --border-color: #F68F5D;
+    --border-width: 0.15em;
+    transition: transform 0.1s ease-in-out;
+    &:active{
+      --background-activated: none !important;
+      transform: scale(0.95);
+    }
   }
