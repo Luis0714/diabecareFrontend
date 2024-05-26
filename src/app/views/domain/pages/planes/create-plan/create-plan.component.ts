@@ -1,33 +1,135 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonTitle, IonFooter, IonToolbar } from "@ionic/angular/standalone";
+import { Component, OnInit, inject } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IonContent, IonTitle, IonFooter, IonToolbar, IonTextarea, IonAlert, IonButton, IonToast } from "@ionic/angular/standalone";
+import { HealthProfessionalService } from 'src/app/core/services/health-professional.service';
+import { PatientsService } from 'src/app/core/services/patients.service';
+import { StorageService } from 'src/app/core/services/storage.service';
 import { CustomButtonComponent } from 'src/app/shared/components/custom-button/custom-button.component';
 import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/custom-footer.component';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
+import { Recommendation } from 'src/app/core/models/recommendation.model';
 import { ICONS } from 'src/app/shared/constants/icons.constants';
+import { PersonalizedPlanService } from 'src/app/core/services/personalized-plan.service';
+import { PersonalizedPlan } from 'src/app/core/models/personalized-plan.model';
+import {  MESSAGES } from 'src/app/shared/constants/messages.constants';
 
 @Component({
   selector: 'app-create-plan',
   templateUrl: './create-plan.component.html',
   styleUrls: ['./create-plan.component.scss'],
   standalone: true,
-  imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar, CommonModule, FormsModule,ReactiveFormsModule, CustomInputComponent, CustomButtonComponent]
+  imports: [IonButton, IonAlert, IonTextarea, IonTitle, IonContent, IonAlert ,CustomHeaderComponent, 
+  CustomFooterComponent, IonFooter, IonToolbar, CommonModule, FormsModule,ReactiveFormsModule, 
+  CustomInputComponent, CustomButtonComponent, IonToast]
 })
 export class CreatePlanComponent  implements OnInit {
 
   icons = ICONS;
-  constructor(fb: FormBuilder) { 
+  patientId: number = 0;
+  professionalId: number = 0;
+  professionalUserId: number = 0;
+  patientName: string = ''; 
+  router = inject(Router);
+  patientService = inject(PatientsService);
+  professionalService = inject(HealthProfessionalService);
+  storageService = inject(StorageService);
+  planService = inject(PersonalizedPlanService);
+  recommendations: Recommendation[] = [];
+  message: string = '';
+  
+  public alertButtons = [
+    {
+      text: 'No',
+      role: 'cancel',
+      handler: () => {
+        this.createPlan();
+      },
+    },
+    {
+      text: 'Sí',
+      role: 'confirm',
+      handler: () => {
+        this.planForm.reset();
+      },
+    },
+  ];
+
+  isToastOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isToastOpen = isOpen;
+  }
+
+  constructor(
+    private route: ActivatedRoute
+  ) { 
     
   }
 
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-    token: new FormControl('', [])
+  planForm = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    activity: new FormControl('', [Validators.required]),
+    executeHour: new FormControl('', [Validators.required])
   });
-  ngOnInit() {}
 
+  ngOnInit() {
+    this.setOpen(false);
+    this.getInfoPatient();
+    this.getProfessionalId();
+  }
+
+  getInfoPatient() {
+    this.patientId = parseInt(this.route.snapshot.paramMap.get('patientId') || '0');
+    console.log(this.patientId);
+    
+    this.patientService.getPatientById(this.patientId).subscribe((patient) => {
+      this.patientName = patient.data.full_name;
+    });
+  }
+
+  getProfessionalId() {
+    this.getUserLogged();
+    this.professionalService.getHealthProfessionalById(this.professionalUserId).subscribe((professional) => {
+      this.professionalId = professional.data;
+    });
+  }
+
+  addRecommendation() {
+    let recommendation: Recommendation = {
+      planId: 0,
+      titulo: this.planForm.value.title ?? '',
+      actividad: this.planForm.value.activity ?? '',
+      horaEjecucion: this.planForm.value.executeHour ?? ''
+    }
+    this.recommendations.push(recommendation);
+  }
+
+  getUserLogged() {
+    this.professionalUserId = this.storageService.getUser()?.usuarioId ?? 0;
+  }
+
+  createPlan() {
+    let plan: PersonalizedPlan = {
+      pacienteId: this.patientId,
+      profesionalSaludId: this.professionalId,
+      recomendaciones: this.recommendations
+    }
+
+    console.log(plan);
+    
+    this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
+      if (response.data != 0) {
+        console.log('Plan creado');
+        this.router.navigate(['/home/patients']);
+        this.message = MESSAGES.success.createPlan;
+        this.setOpen(true);
+        console.log(this.isToastOpen);
+        
+      }
+    });
+  }
 }
 

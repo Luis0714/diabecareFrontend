@@ -1,3 +1,36 @@
-<p>
-  create-plan works!
-</p>
+<app-custom-header title="Crear plan"></app-custom-header>
+
+<ion-content>
+  <div class="container_info_welcome_user">
+    <h1>{{patientName}}</h1>
+  </div>
+  <div class="form">
+    <form [formGroup]="planForm">
+      <app-custom-input type="text" label="Titulo" [control]="planForm.controls['title']" />
+
+      <!--
+        <ion-textarea class="custom-input" placeholder="Actividad"></ion-textarea>
+      -->
+
+      <app-custom-input type="text" label="Actividad" [control]="planForm.controls['activity']" />
+      <app-custom-input type="text" label="Hora" [control]="planForm.controls['executeHour']" />
+
+      <!-- <app-custom-button id="present-alert" (click)="addRecommendation()"  text="Agregar recomendación"
+        type="solid">
+        <ion-alert trigger="present-alert" header="¿Agregar otra recomendación?" [buttons]="alertButtons"></ion-alert>
+      </app-custom-button> -->
+
+      <ion-button id="present-alert" class="" (click)="addRecommendation()">Agregar recomendación</ion-button>
+      <ion-alert trigger="present-alert" header="¿Deseas agregar otra recomendación?" [buttons]="alertButtons">
+        <ion-toast position="top" [isOpen]="isToastOpen" [message]="message" [duration]="5000" color="success"
+          (didDismiss)="setOpen(false)"></ion-toast>
+      </ion-alert>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>
