@@ -2,13 +2,13 @@
   <button class="footer-button" (click)="goToHome()">
     <ion-icon slot="end" [name]="icons.home" size="large"></ion-icon>
   </button>
-  @if (user?.rol == 2) {
+  @if (user?.rol == roles.healthProfessional) {
   <button class="footer-button" (click)="goToPatients()">
     <ion-icon slot="end" [name]="icons.patients" size="large"></ion-icon>
   </button>
   } 
   
-  @if (user?.rol == 1) {
+  @if (user?.rol == roles.patient) {
     <button class="footer-button">
       <ion-icon slot="end" [name]="icons.planes" size="large"></ion-icon>
     </button>
