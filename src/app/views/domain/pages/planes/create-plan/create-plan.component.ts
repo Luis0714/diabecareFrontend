@@ -21,17 +21,17 @@ import {  MESSAGES } from 'src/app/shared/constants/messages.constants';
   templateUrl: './create-plan.component.html',
   styleUrls: ['./create-plan.component.scss'],
   standalone: true,
-  imports: [IonButton, IonAlert, IonTextarea, IonTitle, IonContent, IonAlert ,CustomHeaderComponent, 
-  CustomFooterComponent, IonFooter, IonToolbar, CommonModule, FormsModule,ReactiveFormsModule, 
+  imports: [IonButton, IonAlert, IonTextarea, IonTitle, IonContent, IonAlert ,CustomHeaderComponent,
+  CustomFooterComponent, IonFooter, IonToolbar, CommonModule, FormsModule,ReactiveFormsModule,
   CustomInputComponent, CustomButtonComponent, IonToast]
 })
 export class CreatePlanComponent  implements OnInit {
-
+  recommendation_count: number = 0;
   icons = ICONS;
   patientId: number = 0;
   professionalId: number = 0;
   professionalUserId: number = 0;
-  patientName: string = ''; 
+  patientName: string = '';
   router = inject(Router);
   patientService = inject(PatientsService);
   professionalService = inject(HealthProfessionalService);
@@ -39,7 +39,7 @@ export class CreatePlanComponent  implements OnInit {
   planService = inject(PersonalizedPlanService);
   recommendations: Recommendation[] = [];
   message: string = '';
-  
+
   public alertButtons = [
     {
       text: 'No',
@@ -65,18 +65,17 @@ export class CreatePlanComponent  implements OnInit {
 
   constructor(
     private route: ActivatedRoute
-  ) { 
-    
+  ) {
+
   }
 
   planForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
     activity: new FormControl('', [Validators.required]),
-    executeHour: new FormControl('', [Validators.required])
+    executeHour: new FormControl('', [Validators.required]),
   });
 
   ngOnInit() {
-    this.setOpen(false);
     this.getInfoPatient();
     this.getProfessionalId();
   }
@@ -84,7 +83,7 @@ export class CreatePlanComponent  implements OnInit {
   getInfoPatient() {
     this.patientId = parseInt(this.route.snapshot.paramMap.get('patientId') || '0');
     console.log(this.patientId);
-    
+
     this.patientService.getPatientById(this.patientId).subscribe((patient) => {
       this.patientName = patient.data.full_name;
     });
@@ -98,13 +97,20 @@ export class CreatePlanComponent  implements OnInit {
   }
 
   addRecommendation() {
-    let recommendation: Recommendation = {
-      planId: 0,
-      titulo: this.planForm.value.title ?? '',
-      actividad: this.planForm.value.activity ?? '',
-      horaEjecucion: this.planForm.value.executeHour ?? ''
+    if(this.planForm.valid){
+      let recommendation: Recommendation = {
+        planId: 0,
+        titulo: this.planForm.value.title ?? '',
+        actividad: this.planForm.value.activity ?? '',
+        horaEjecucion: this.planForm.value.executeHour ?? ''
+      }
+      console.log(recommendation);
+      this.recommendations.push(recommendation);
+      this.incrementCount();
+      this.message = MESSAGES.success.addRecommendation;
+      this.setOpen(true);
+      console.log(this.recommendation_count);
     }
-    this.recommendations.push(recommendation);
   }
 
   getUserLogged() {
@@ -119,17 +125,33 @@ export class CreatePlanComponent  implements OnInit {
     }
 
     console.log(plan);
+    if (this.recommendations.length != 0) {
+      this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
+        if (response.data) {
+          console.log('Plan creado');
+          this.router.navigate(['/home/patients']);
+          this.showToast();
+          console.log(this.isToastOpen);
+          this.recommendation_count = 0;
+          
+        }
+      });
+    }else{
+      this.router.navigate(['/home/patients']);
+      this.message = MESSAGES.error.createPlan;
+      this.setOpen(true);
+      console.log(this.isToastOpen);
+    }
     
-    this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
-      if (response.data != 0) {
-        console.log('Plan creado');
-        this.router.navigate(['/home/patients']);
-        this.message = MESSAGES.success.createPlan;
-        this.setOpen(true);
-        console.log(this.isToastOpen);
-        
-      }
-    });
+  }
+
+  incrementCount() {
+    this.recommendation_count++;
+  }
+
+  showToast() {
+    this.message = MESSAGES.success.createPlan;
+    this.setOpen(true);
   }
 }
 

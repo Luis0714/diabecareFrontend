@@ -48,13 +48,15 @@ export class HomePage implements OnInit {
 
   saveToken() {
     let userId = this.storageService.getUser()?.usuarioId;
-    let token = this.storageService.getToken();
+    let token = this.storageService.getDeviceToken();
     let tokenDevice: tokenDevice = {
       token: token,
       userId: userId
     };
-    this.notificationService.saveTokenDevice(tokenDevice).subscribe((res) => {
-      console.log(res);
+    console.log("send save token");
+    console.log(tokenDevice);
+    this.notificationService.saveTokenDevice(tokenDevice).subscribe((response) => {
+      console.log("response save token", response);
     });
   }
 
@@ -62,24 +64,5 @@ export class HomePage implements OnInit {
     this.user =  this.storageService.getUser();
   }
 
-  setOpen(isOpen: boolean) {
-    this.isToastOpen = isOpen;
-  }
-
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      handler: () => {
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'OK',
-      role: 'confirm',
-      handler: () => {
-        console.log('Alert confirmed');
-      },
-    },
-  ];
 }
+

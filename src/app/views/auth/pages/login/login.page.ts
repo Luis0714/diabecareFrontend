@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonToast, IonLoading, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonLoading, IonHeader, IonTitle, IonToolbar, IonButtons, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { CustomInputComponent } from 'src/app/shared/components/custom-input/custom-input.component';
 import { CustomLogoComponent } from 'src/app/shared/components/custom-logo/custom-logo.component';
@@ -16,13 +16,11 @@ import { BACKEND } from 'src/app/shared/constants/backend';
 import { CustomCardPatientComponent } from 'src/app/shared/components/custom-card-patient/custom-card-patient.component';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Credentials } from 'src/app/core/models/credentials.model';
-import { StorageServiceService } from 'src/app/storage-service.service';
-import { GENERAL_CONSTANTS } from 'src/app/shared/constants/generals.constants';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 import { Router } from '@angular/router';
 import { COLORS } from 'src/app/shared/constants/colors.constans';
 import { environment } from 'src/environments/environment.prod';
-import { timeout } from 'rxjs';
+import { StorageService } from 'src/app/core/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -56,12 +54,12 @@ export class LoginPage implements OnInit {
   ngOnInit(): void {
     this.getTokenDevice();
     this.text.set(environment.server);
-    console.log("Funcionando...");
+    console.log("started...");
   }
 
   utilsService = inject(UtilsService);
   authService = inject(AuthService);
-  storageService = inject(StorageServiceService);
+  storageService = inject(StorageService);
   notificationService = inject(NotificationPushService);
   icons = ICONS;
   messages = MESSAGES;
@@ -81,50 +79,34 @@ export class LoginPage implements OnInit {
 
    login() {
     console.log('login');
-    this.text.set('login');
-    //const loading = await this.utilsService.loading(this.messages.info.loading);
 
-    console.log("Formulario valido", this.loginForm.valid);
     if (this.loginForm.valid) {
-      //await loading.present();
       const credentials = this.loginForm.value as Credentials;
       const credential:Credentials = {
         password: credentials.password,
         email: credentials.email
       }
-      const token = this.loginForm.get('token')?.value;
-      console.log("Credenciales", credential);
+
       this.authService.login(credential).subscribe(async response => {
-      //  await loading.present();
         if (response.statusCode === 200) {
           this.router.navigate(['/home']);
-       //   loading.dismiss();
         } else {
           this.utilsService.presentAlert(this.messages.error.loginError, this.toastConst.colors.alert, this.icons.alertCircle);
-        //  loading.dismiss();
         }
       }
       )
     }
   }
 
-  async getTokenDevice() {
-    var device = await this.storageService.getItem(GENERAL_CONSTANTS.DEVICE_TOKEN);
-    this.tokenDevice.set(device?.toString() || 'Token no encontrado');
+  getTokenDevice() {
+    const device = this.storageService.getDeviceToken();
+    this.tokenDevice.set(device?.toString() || 'Token not found');
   }
 
-  async showToken() {
-
+  showToken() {
     this.loginForm.patchValue({
-      token: this.tokenDevice() || 'Token no encontrado'
+      token: this.tokenDevice()
     });
     this.viewToken = true;
-    await this.utilsService.presentAlert(this.tokenDevice(), this.toastConst.colors.alert, this.icons.alertCircle);
   }
-
-
-  saludar(){
-    this.text.set("saludo!!");
-  }
-
 }
