@@ -47,7 +47,7 @@ export class HomePage implements OnInit {
   }
 
   saveToken() {
-    let userId = this.storageService.getUser()?.usuarioId;
+    let userId = this.storageService.getUser()?.id;
     let token = this.storageService.getDeviceToken();
     let tokenDevice: tokenDevice = {
       token: token,

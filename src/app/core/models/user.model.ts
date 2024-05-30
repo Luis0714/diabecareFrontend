@@ -1,7 +1,7 @@
 import { RolModel } from "./rol.model";
 
 export interface UserLoginModel{
-  usuarioId: number;
+  id: number;
   nombre: string;
   apellidos: string;
   correo: string;
