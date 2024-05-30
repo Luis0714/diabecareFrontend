@@ -114,7 +114,7 @@ export class CreatePlanComponent  implements OnInit {
   }
 
   getUserLogged() {
-    this.professionalUserId = this.storageService.getUser()?.usuarioId ?? 0;
+    this.professionalUserId = this.storageService.getUser()?.id ?? 0;
   }
 
   createPlan() {
