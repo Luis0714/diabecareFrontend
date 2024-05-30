@@ -31,11 +31,20 @@
         </div>
       </div>
     </div>
-    <app-custom-button
-    onkeypress=""
-    type="outline"
-    text="Crear Plan"
-    (click) = "createPlan()"
-    />
+    <div class="button-container">
+      <app-custom-button
+      onkeypress=""
+      text="Reporte"
+      [leftIcon]="icons.download"
+      />
+      <app-custom-button
+      onkeypress=""
+      type="outline"
+      text="Crear Plan"
+      (click) = "createPlan()"
+      />
+      
+    </div>
+    
   </ion-card-content>
 </ion-card>
