@@ -22,3 +22,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container app-custom-button {
+  flex: 1 0 50%;
+}

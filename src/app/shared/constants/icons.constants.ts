@@ -18,5 +18,6 @@ export const ICONS = {
   patients: 'people-outline',
   chat: 'chatbubble-ellipses-outline',
   user: 'person-circle-outline',
-  planes: 'id-card-outline'
+  planes: 'id-card-outline',
+  download: 'download'
 }
