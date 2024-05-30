@@ -1,0 +1,44 @@
+<ion-header class="custom-header">
+  <ion-toolbar class="toolbar">
+    <div class="toolbar_content">
+      <button class="footer-button">
+        <ion-icon slot="start" [name]="icons.arrowBack" size="large"></ion-icon>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<div class="container">
+  <div class="initial-container">
+    <app-custom-logo class="logo" widthImage="8rem" heightImage="8rem"></app-custom-logo>
+    <p class="title">Registrar datos de monitoreo</p>
+  </div>
+  <div class="form">
+    <form [formGroup]="dataForm">
+      <app-custom-input [icon]="icons.waterOutline" type="number" label="Nivel de glucosa" [control]="dataForm.controls['glucoseLevel']"/>
+      <app-custom-input [icon]="icons.restaurantOutline" type="text" label="Última comida" [control]="dataForm.controls['lastMeal']"/>
+      <app-custom-input [icon]="icons.medkitOutline" type="text" label="Último medicamento" [control]="dataForm.controls['lastMedication']"/>
+      <app-custom-input [icon]="icons.barbellOutline" type="number" label="Horas de ejercicio" [control]="dataForm.controls['physicalActivityHours']"/>
+
+      <div class="container-buttons">
+        <app-custom-button 
+        onkeypress="" 
+        text="Cancelar" 
+        type="outline"
+        />
+
+        <app-custom-button
+        onkeypress=""
+        text="Guardar"
+        [disable]="dataForm.invalid"/>
+        
+      </div>
+    </form>
+  </div>
+</div>
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>

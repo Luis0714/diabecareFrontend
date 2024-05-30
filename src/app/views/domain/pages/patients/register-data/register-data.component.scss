@@ -1,0 +1,59 @@
+.footer-button{
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container {
+  height: auto;
+}
+
+.custom-header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+  }
+
+.toolbar_content{
+    background-color: white;
+}
+
+.form {
+    padding: 20px;
+    align-items: start;
+  }
+
+.container-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1.625em;
+}
+
+.initial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  text-align: center;
+  padding-left: 3.125em;
+  padding-right: 3.125em;
+}
+

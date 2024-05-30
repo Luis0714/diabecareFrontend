@@ -5,9 +5,13 @@ export const ICONS = {
   eyeOff: 'eye-off',
   alertCircle: 'alert-circle',
   water: 'water',
+  waterOutline: 'water-outline',
   barbell: 'barbell',
+  barbellOutline: 'barbell-outline',
   restaurant: 'restaurant',
+  restaurantOutline: 'restaurant-outline',
   medkit: 'medkit',
+  medkitOutline: 'medkit-outline',
   google: 'logo-google',
   facebook: 'logo-facebook',
   login: 'log-in',
@@ -18,5 +22,6 @@ export const ICONS = {
   patients: 'people-outline',
   chat: 'chatbubble-ellipses-outline',
   user: 'person-circle-outline',
-  planes: 'id-card-outline'
+  planes: 'id-card-outline',
+  arrowBack: 'arrow-back-outline'
 }
