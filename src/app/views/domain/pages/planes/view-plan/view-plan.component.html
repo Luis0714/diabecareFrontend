@@ -1,11 +1,14 @@
+<app-custom-header title=""></app-custom-header>
 <div class="content">
-  <div class="title">Planes</div>
+  <div class="title">
+    <ion-icon class="icon" [name]="icons.planes" class="icon" />
+    Planes</div>
   <!-- solo es un ejemplo de como se hara el for de las cartas -->
   @for (recommendetion of recommendetions; track recommendetion.indexOf){
-  <ion-card>
+  <ion-card class="card">
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-subtitle>Fecha</ion-card-subtitle>
+      <ion-card-title>Nombre doctor</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <app-custom-button
@@ -15,3 +18,4 @@
     </ion-card-content>
   </ion-card>}
 </div>
+<app-custom-footer></app-custom-footer>
