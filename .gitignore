@@ -34,8 +34,6 @@ log.txt
 
 # Node
 /node_modules
-/android
-/ios
 npm-debug.log
 yarn-error.log
 
@@ -82,7 +80,8 @@ android/app/google-services.json
 android/google-services.json
 ios/App/App/google-services.json
 android/
-i
+android/app
+android/capacitor-cordova-android-plugins
 ios/
 src/environments/environment.prod.ts
 src/environments/environment.ts

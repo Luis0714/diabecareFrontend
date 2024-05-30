@@ -32,10 +32,10 @@
       </div>
     </div>
     <app-custom-button
-    [leftIcon]="icons.lock"
     onkeypress=""
     type="outline"
     text="Crear Plan"
+    (click) = "createPlan()"
     />
   </ion-card-content>
 </ion-card>

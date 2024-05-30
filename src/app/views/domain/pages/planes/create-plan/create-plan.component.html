@@ -1,20 +1,31 @@
-<app-custom-header title="Formulario de Actividades"></app-custom-header>
-
+<app-custom-header title="Crear plan"></app-custom-header>
 <ion-content>
   <div class="container_info_welcome_user">
-    <h1>Nombre usuario</h1>
+    <div class="patient-name">
+      <h1>{{patientName}}</h1>
+    </div>
+    <div class="counter">
+      <span class="counter-number">{{recommendation_count}}</span>
+      <span class="counter-text">Recomendaciones</span>
+    </div>
   </div>
   <div class="form">
-    <form [formGroup]="loginForm">
-      <app-custom-input type="text" label="Correo electrónico" [icon]="icons.person"
-        [control]="loginForm.controls['email']" />
-  
-      <app-custom-input type="password" label="Contraseña" [icon]="icons.lock"
-        [control]="loginForm.controls['password']" />
-  
-  
-      <app-custom-button id="open-loading" onkeypress="" colorLeftIcon="primary"  text="Iniciar sesión"
-        type="solid" />
+    <form [formGroup]="planForm">
+      <app-custom-input type="text" label="Titulo" [control]="planForm.controls['title']" />
+      <!--
+        <ion-textarea class="custom-input" placeholder="Actividad"></ion-textarea>
+      -->
+      <app-custom-input type="text-area" label="Actividad" [control]="planForm.controls['activity']" />
+      <app-custom-input type="time" label="Hora" [control]="planForm.controls['executeHour']" />
+      
+      <ion-button id="present-alert" [disabled]="planForm.invalid" (click)="addRecommendation()">Agregar recomendación</ion-button>
+      
+      <ion-alert trigger="present-alert" header="¿Deseas agregar otra recomendación?" [buttons]="alertButtons">
+        <ion-toast position="top" [isOpen]="isToastOpen" [message]="message" [duration]="5000" color="success"
+          (didDismiss)="setOpen(false)">
+        </ion-toast>
+      </ion-alert>
+      
     </form>
   </div>
 </ion-content>
