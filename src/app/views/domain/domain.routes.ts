@@ -25,6 +25,10 @@ export const DOMAIN_ROUTES: Routes = [
       {
         path: 'create-plan/:patientId',
         loadComponent: () => import('./pages/planes/create-plan/create-plan.component').then((m) => m.CreatePlanComponent),
+      },
+      {
+        path: 'view-plan/:patientId',
+        loadComponent: () => import('./pages/planes/view-plan/view-plan.component').then((m) => m.ViewPlanComponent),
       }
     ]
 
