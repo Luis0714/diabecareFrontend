@@ -29,8 +29,11 @@ export const DOMAIN_ROUTES: Routes = [
       {
         path: 'view-plan/:patientId',
         loadComponent: () => import('./pages/planes/view-plan/view-plan.component').then((m) => m.ViewPlanComponent),
+      },
+      {
+        path: 'view-recommendations/:planId',
+        loadComponent: () => import('./pages/recommendations/recommendations.component').then((m) => m.RecommendationsComponent),
       }
     ]
-
   }
 ]

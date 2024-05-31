@@ -1,21 +1,15 @@
-<app-custom-header title=""></app-custom-header>
-<div class="content">
+<app-custom-header title="plans"/>
+<ion-content class="content">
   <div class="title">
     <ion-icon class="icon" [name]="icons.planes" class="icon" />
     Planes</div>
   <!-- solo es un ejemplo de como se hara el for de las cartas -->
-  @for (recommendetion of recommendetions; track recommendetion.indexOf){
-  <ion-card class="card">
-    <ion-card-header>
-      <ion-card-subtitle>Fecha</ion-card-subtitle>
-      <ion-card-title>Nombre doctor</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <app-custom-button
-        [text]="'Ver recomendaciones'"
-        [color]="'primary'"
-      ></app-custom-button>
-    </ion-card-content>
-  </ion-card>}
-</div>
-<app-custom-footer></app-custom-footer>
+  @for (plan of plans; track plan.planId){
+  <app-custom-card-plan [plan]="plan"/>
+ }
+</ion-content>
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>

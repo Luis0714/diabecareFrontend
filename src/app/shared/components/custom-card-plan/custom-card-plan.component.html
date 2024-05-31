@@ -1,0 +1,13 @@
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-subtitle>{{plan.creation_date}}</ion-card-subtitle>
+    <ion-card-title>{{plan.full_name_professional}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <app-custom-button
+      [text]="'Ver recomendaciones'"
+      (click) = "goToRecommendations()"
+      [type]="'outline'"
+    ></app-custom-button>
+  </ion-card-content>
+</ion-card>
