@@ -1,3 +1,22 @@
-<p>
-  custom-card-recommendation works!
-</p>
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-title>
+      <div class="title-row">
+        <h3>
+          {{ recommendation.titulo }}
+        </h3>
+        <span class="date-exec">{{ recommendation.horaEjecucion }}</span>
+      </div>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+   <p>{{ recommendation.actividad }}</p> 
+   <div class="state-content">
+    <div
+      class="state-recommendation"
+      [ngClass]="setColorState(recommendation.estado)"
+    ></div>
+    <p  [ngClass]="setColorStateText(recommendation.estado)">{{recommendation.estado}}</p>
+  </div>
+  </ion-card-content>
+</ion-card>

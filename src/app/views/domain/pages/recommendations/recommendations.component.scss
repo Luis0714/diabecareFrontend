@@ -1,0 +1,12 @@
+
+.title {
+    display: flex; // Habilita flexbox
+    flex-direction: column; // Hace que los elementos estén en columna
+    justify-content: center; // Centra los elementos horizontalmente
+    align-items: center; // Centra los elementos verticalmente
+    text-align: center; // Centra el texto horizontalmente
+    font-weight: bolder; // Hace que el texto sea en negrita
+    font-size: 2rem; // Tamaño de la fuente
+    margin-top: 20px;
+    color: #494949; // Color de letra gris
+}

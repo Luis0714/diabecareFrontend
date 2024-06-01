@@ -1,0 +1,64 @@
+.title-row {
+    display: flex;
+    justify-content: space-between;
+}
+.date-exec {
+    font-size: 0.8rem; // Tamaño de letra pequeño
+    color: gray; // Color de letra gris
+}
+
+.state-recommendation {
+    width: 20px; // Ancho de 10px
+    height: 20px; // Alto de 10px
+    border-radius: 50%; // Borde redondeado
+    margin-top: 10px; // Margen derecho de 5px
+}
+
+.color-state-Sin-realizar{
+    background-color: #FF0000; // Color de fondo rojo
+}
+
+.color-state-Realizada{
+    background-color: #00FF00; // Color de fondo verde
+}
+
+.color-state-En-proceso{
+    background-color: #FFA500; // Color de fondo naranja
+}
+
+.title-row h3{
+    font-size: 1.2rem; // Tamaño de letra grande
+    font-weight: 700;
+    margin-bottom: 0; // Margen inferior de 0
+}
+
+.color-state-text-Sin-realizar{
+    color: #FF0000; // Color de fondo rojo
+}
+
+.color-state-text-Realizada{
+    color: #00FF00; // Color de fondo verde
+}
+
+.color-state-text-En-proceso{
+    color: #FFA500; // Color de fondo naranja
+}
+
+.state-text{
+    font-size: 0.8rem; // Tamaño de letra pequeño
+    font-weight: 400;
+
+}
+
+.state-content{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: end;
+}
+
+.card{
+    border-radius: 10px; // Borde redondeado
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Sombra
+    padding-left: 0.8rem; // Relleno de 1rem
+}

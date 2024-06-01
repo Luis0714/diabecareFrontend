@@ -1,3 +1,14 @@
-<p>
-  recommendations works!
-</p>
+<app-custom-header title=""/>
+<ion-content class="content">
+  <div class="title">
+    Recomendaciones</div>
+  <!-- solo es un ejemplo de como se hara el for de las cartas -->
+  @for (recommendation of recommendations; track recommendation.recomendacionId){
+  <app-custom-card-recommendation [recommendation]="recommendation"/>
+ }
+</ion-content>
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <app-custom-footer></app-custom-footer>
+  </ion-toolbar>
+</ion-footer>
