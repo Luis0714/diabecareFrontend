@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
   IonContent,
@@ -7,6 +7,7 @@ import {
   IonIcon,
 } from '@ionic/angular/standalone';
 import { RecommendationViewModel } from 'src/app/core/models/recommendation.model';
+import { RecommendationService } from 'src/app/core/services/recommendation.service';
 import { CustomCardRecommendationComponent } from 'src/app/shared/components/custom-card-recommendation/custom-card-recommendation.component';
 import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/custom-footer.component';
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
@@ -27,6 +28,7 @@ import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/c
   ],
 })
 export class RecommendationsComponent implements OnInit {
+  recommendationService = inject(RecommendationService);
   recommendations: RecommendationViewModel[] = [];
   planId: string|null = null;
   constructor(private route: ActivatedRoute) {
@@ -43,6 +45,9 @@ ngOnInit() {
 }
 
 getRecommendations() {
+  this.recommendationService.getRecommendationsByPlanId(Number(this.planId)).subscribe((data) => {
+    this.recommendations = data.data;
+  });
 }
 
 }
