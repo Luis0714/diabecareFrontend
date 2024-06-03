@@ -5,3 +5,9 @@ export interface PersonalizedPlan {
     profesionalSaludId: number;
     recomendaciones: Recommendation[];
 }
+
+export interface PersonalizedPlanResponse {
+    planId: number;
+    creation_date: string;
+    full_name_professional: string;
+}

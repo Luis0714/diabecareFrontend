@@ -1,7 +1,7 @@
 <ion-card class="card">
   <ion-card-header>
-    <ion-card-subtitle>{{plan.creation_date}}</ion-card-subtitle>
-    <ion-card-title>{{plan.full_name_professional}}</ion-card-title>
+    <ion-card-title>Dr {{plan.full_name_professional}}</ion-card-title>
+    <ion-card-subtitle>{{plan.creation_date | date}}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <app-custom-button

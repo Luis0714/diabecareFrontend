@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonIcon, IonFooter, IonToolbar, IonContent } from "@ionic/angular/standalone";
 import { IonCard } from "@ionic/angular/standalone";
 import { PlanModel } from 'src/app/core/models/plan.model';
@@ -7,6 +7,9 @@ import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/c
 import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/custom-header.component';
 import { ICONS } from 'src/app/shared/constants/icons.constants';
 import { CustomCardPlanComponent } from 'src/app/shared/components/custom-card-plan/custom-card-plan.component';
+import { StorageService } from 'src/app/core/services/storage.service';
+import { PersonalizedPlanService } from 'src/app/core/services/personalized-plan.service';
+import { PersonalizedPlanResponse } from 'src/app/core/models/personalized-plan.model';
 
 
 @Component({
@@ -17,34 +20,23 @@ import { CustomCardPlanComponent } from 'src/app/shared/components/custom-card-p
   imports: [IonContent, IonToolbar, IonFooter, IonIcon, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard,CustomButtonComponent,CustomFooterComponent,CustomHeaderComponent,CustomCardPlanComponent ]
 })
 export class ViewPlanComponent implements OnInit {
-  plans: PlanModel[] = [];
+  plans: PersonalizedPlanResponse[] = [];
+  personalizedPlansService = inject(PersonalizedPlanService);
+  storageService = inject(StorageService);
   icons = ICONS;
 
-
   constructor() {
-    this.plans = [
-      {
-        planId: 1,
-        creation_date: new Date(),
-        full_name_professional: 'Dr. Juan Pérez'
-      },
-      {
-        planId: 2,
-        creation_date: new Date(),
-        full_name_professional: 'Dr. Juan Pérez'
-      },
-      {
-        planId: 3,
-        creation_date: new Date(),
-        full_name_professional: 'Dr. Juan Pérez'
-      },
-      {
-        planId: 4,
-        creation_date: new Date(),
-        full_name_professional: 'Dr. Juan Pérez'
-      }
-    ];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.get_plans();
+  }
+
+  get_plans() {
+    const iduser = this.storageService.getUser()?.id;
+    this.personalizedPlansService.getPersonalizedPlans(iduser).subscribe((data) => {
+        this.plans = data.data;
+  }
+    );
+  }
 }

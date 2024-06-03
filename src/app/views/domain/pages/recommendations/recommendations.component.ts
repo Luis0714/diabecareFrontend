@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   IonContent,
   IonToolbar,
@@ -27,43 +28,21 @@ import { CustomHeaderComponent } from 'src/app/shared/components/custom-header/c
 })
 export class RecommendationsComponent implements OnInit {
   recommendations: RecommendationViewModel[] = [];
-  constructor() {
-    this.recommendations = [
-      {
-        recomendacionId: 1,
-        titulo: 'Hacer Mas Ejercicio',
-        estado: 'Sin realizar',
-        actividad: 'Haz 30 minutos de ejercicio diario',
-        planId: 1,
-        horaEjecucion: '10:00',
-      },
-      {
-        recomendacionId: 2,
-        titulo: 'Recomendación 2',
-        estado: 'Realizada',
-        actividad: 'coma frutas y verduras',
-        planId: 2,
-        horaEjecucion: '11:00',
-      },
-      {
-        recomendacionId: 3,
-        titulo: 'Recomendación 3',
-        estado: 'Activo',
-        actividad: 'Actividad 3',
-        planId: 3,
-        horaEjecucion: '12:00',
-      },
-      {
-        recomendacionId: 4,
-        titulo: 'Recomendación 4',
-        estado: 'Activo',
-        actividad: 'Actividad 4',
-        planId: 4,
-        horaEjecucion: '13:00',
-      },
-    ];
+  planId: string|null = null;
+  constructor(private route: ActivatedRoute) {
+
   }
+ngOnInit() {
+  //conseguir el planId de la url
+  this.route.paramMap.subscribe((params) => {
+    this.planId = params.get('planId');
+    console.log(this.planId);
+  });
+  //obtener las recomendaciones
+  this.getRecommendations();
+}
 
+getRecommendations() {
+}
 
-  ngOnInit() {}
 }
