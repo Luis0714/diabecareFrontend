@@ -42,4 +42,8 @@ export class CustomFooterComponent  implements OnInit {
     this.routers.navigateByUrl('home');
   }
 
+  goToViewPlans() {
+    this.routers.navigateByUrl('home/view-plans');
+  }
+
 }

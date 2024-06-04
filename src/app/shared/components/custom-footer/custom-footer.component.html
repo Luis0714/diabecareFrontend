@@ -9,7 +9,7 @@
   } 
   
   @if (user?.rolId == roles.patient) {
-    <button class="footer-button">
+    <button class="footer-button" (click)="goToViewPlans()">
       <ion-icon slot="end" [name]="icons.planes" size="large"></ion-icon>
     </button>
   }
