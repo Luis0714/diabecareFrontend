@@ -26,6 +26,8 @@ export class CustomFooterComponent  implements OnInit {
 
   getUserLogged() {
     this.user =  this.storageService.getUser();
+    console.log(this.user);
+    
   }
 
   goToPatients() {

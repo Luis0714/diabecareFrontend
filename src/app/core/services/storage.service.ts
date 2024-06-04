@@ -31,6 +31,8 @@ export class StorageService {
 
   saveUser(user: UserLoginModel){
     localStorage.setItem('user', JSON.stringify(user));
+    console.log("User saved", user);
+    
   }
 
   getUser(): UserLoginModel | null {

@@ -1,5 +1,3 @@
-import { RolModel } from "./rol.model";
-
 export interface UserLoginModel{
   id: number;
   nombre: string;
@@ -10,5 +8,5 @@ export interface UserLoginModel{
   ciudad: string;
   foto: string;
   fechaNacimiento: string;
-  rol: number;
+  rolId: number;
 }
