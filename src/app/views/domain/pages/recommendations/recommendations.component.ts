@@ -34,13 +34,15 @@ export class RecommendationsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
 
   }
+  
+  /**
+   * @description primero se obtiene el planId de la url y luego se obtienen las recomendaciones
+   */
 ngOnInit() {
-  //conseguir el planId de la url
   this.route.paramMap.subscribe((params) => {
     this.planId = params.get('planId');
     console.log(this.planId);
   });
-  //obtener las recomendaciones
   this.getRecommendations();
 }
 
