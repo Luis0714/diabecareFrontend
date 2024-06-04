@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, input } from '@angular/core';
-import { FormControl, FormControlName, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormControl, FormControlName, ReactiveFormsModule } from '@angular/forms';
 import { IonLabel, IonItem, IonInput, IonIcon, IonButton } from "@ionic/angular/standalone";
 import { ICONS } from '../../constants/icons.constants';
 

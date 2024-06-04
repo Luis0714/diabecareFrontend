@@ -33,6 +33,10 @@ export const DOMAIN_ROUTES: Routes = [
       {
         path: 'view-recommendations/:planId',
         loadComponent: () => import('./pages/recommendations/recommendations.component').then((m) => m.RecommendationsComponent),
+      },
+      {
+        path: 'register-data',
+        loadComponent: () => import('./pages/patients/register-data/register-data.component').then((m) => m.RegisterDataComponent),
       }
     ]
   }
