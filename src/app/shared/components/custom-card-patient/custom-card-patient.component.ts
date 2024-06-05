@@ -10,6 +10,7 @@ import { ICONS } from '../../constants/icons.constants';
 import { COLORS } from '../../constants/colors.constans';
 import { AgePipe } from '../../pipes/age.pipe';
 import { HoursPipe } from '../../pipes/hours.pipe';
+import { PdfService } from 'src/app/core/services/pdf.service';
 
 @Component({
   selector: 'app-custom-card-patient',
@@ -31,6 +32,9 @@ import { HoursPipe } from '../../pipes/hours.pipe';
   ]
 })
 export class CustomCardPatientComponent  implements OnInit {
+  pdfService = inject(PdfService);
+  x: String = '';
+  y: String = '';
 
   @Input({required: true}) patient!: Patient;
   icons = ICONS;
@@ -42,4 +46,24 @@ export class CustomCardPatientComponent  implements OnInit {
     this.router.navigateByUrl(`home/create-plan/${this.patient.patientId}`);
   }
 
+  generateReport() {
+    this.pdfService.generateReport(this.patient.patientId).subscribe((response: Blob) => {
+      const a = document.createElement('a');
+      const objectUrl = URL.createObjectURL(response);
+      a.href = objectUrl;
+      let date = this.todayDate();
+      a.download = `Reporte_${date}_${this.patient.name} ${this.patient.lastName}.pdf`;
+      console.log(objectUrl);
+      a.click();
+      URL.revokeObjectURL(objectUrl);
+    }, error => {
+      console.error('Error al generar el reporte', error);
+    });
+  }
+
+  todayDate() {
+    let currentDate = new Date();
+    let formattedDate = `${currentDate.getDate()}-${currentDate.getMonth()+1}-${currentDate.getFullYear()}`;
+    return formattedDate;
+  }
 }

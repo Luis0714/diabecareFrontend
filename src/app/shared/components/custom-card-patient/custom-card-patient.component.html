@@ -36,6 +36,7 @@
       onkeypress=""
       text="Reporte"
       [leftIcon]="icons.download"
+      (click) = "generateReport()"
       />
       <app-custom-button
       onkeypress=""
@@ -43,7 +44,6 @@
       text="Crear Plan"
       (click) = "createPlan()"
       />
-      
     </div>
     
   </ion-card-content>
