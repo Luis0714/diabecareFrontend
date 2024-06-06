@@ -1,8 +1,9 @@
 <app-custom-header title=""/>
 <ion-content class="content">
   <div class="title">
-    <ion-icon class="icon" [name]="icons.planes" class="icon" />
-    Planes</div>
+    <ion-icon class="icon" [name]="icons.planes" />
+    <span class="title-text">Planes</span>
+  </div>
   <!-- solo es un ejemplo de como se hara el for de las cartas -->
   @for (plan of plans; track plan.planId){
   <app-custom-card-plan [plan]="plan"/>
