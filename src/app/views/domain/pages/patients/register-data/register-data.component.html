@@ -8,34 +8,33 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="container">
+<ion-content class="container">
   <div class="initial-container">
     <app-custom-logo class="logo" widthImage="8rem" heightImage="8rem"></app-custom-logo>
     <p class="title">Registrar datos de monitoreo</p>
   </div>
   <div class="form">
     <form [formGroup]="dataForm">
-      <app-custom-input [icon]="icons.waterOutline" type="number" label="Nivel de glucosa" [control]="dataForm.controls['glucoseLevel']"/>
-      <app-custom-input [icon]="icons.restaurantOutline" type="text" label="Última comida" [control]="dataForm.controls['lastMeal']"/>
-      <app-custom-input [icon]="icons.medkitOutline" type="text" label="Último medicamento" [control]="dataForm.controls['lastMedication']"/>
-      <app-custom-input [icon]="icons.barbellOutline" type="number" label="Horas de ejercicio" [control]="dataForm.controls['physicalActivityHours']"/>
+      <app-custom-input [icon]="icons.waterOutline" type="number" label="Nivel de glucosa"
+        [control]="dataForm.controls['glucose_level']" />
+      <app-custom-input [icon]="icons.restaurantOutline" type="text" label="Última comida"
+        [control]="dataForm.controls['food']" />
+      <app-custom-input [icon]="icons.medkitOutline" type="text" label="Último medicamento"
+        [control]="dataForm.controls['medication']" />
+      <app-custom-input [icon]="icons.barbellOutline" type="number" label="Horas de ejercicio"
+        [control]="dataForm.controls['hours_physical_activity']" />
 
       <div class="container-buttons">
-        <app-custom-button 
-        onkeypress="" 
-        text="Cancelar" 
-        type="outline"
-        />
+        <app-custom-button (click)="navigateToHome()" onkeypress="" text="Cancelar" type="outline" />
 
-        <app-custom-button
-        onkeypress=""
-        text="Guardar"
-        [disable]="dataForm.invalid"/>
-        
+        <app-custom-button onkeypress="" text="Guardar" (click)="registerHistory()" [disable]="dataForm.invalid" />
+
       </div>
     </form>
   </div>
-</div>
+  <ion-toast [isOpen]="isToastOpen" [message]="messageToast" [duration]="5000" [color]="colorToast" position="top"
+    (didDismiss)="setOpen(false,messageToast,colorToast)"></ion-toast>
+</ion-content>
 
 <ion-footer collapse="fade">
   <ion-toolbar>
