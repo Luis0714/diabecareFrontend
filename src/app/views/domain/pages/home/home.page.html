@@ -5,7 +5,13 @@
       <h1>Bienvenido, {{user?.nombre}}👋🏽</h1>
     </div>
 
-    <h2>Diabetes: todo lo que debes saber</h2>
+    @if (user?.rolId == roles.patient) {
+      <div class="section-register-data">
+      <p>¿Cómo te sientes hoy? Cuéntanos <a (click)="goToRegister()">aquí</a></p>
+    </div>
+    }
+    <br>
+    <h2>Diabetes: todo lo que debes saber</h2>  
     <img alt="Imagen con información sobre la diabetes"
       src="https://storagediabecare1.blob.core.windows.net/storagediabecare1/datos-diabetes.png" />
     <p>

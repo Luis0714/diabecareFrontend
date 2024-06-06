@@ -12,6 +12,8 @@ import { StorageService } from 'src/app/core/services/storage.service';
 import { CustomFooterComponent } from 'src/app/shared/components/custom-footer/custom-footer.component';
 import { NotificationPushService } from 'src/app/core/services/notification-push.service';
 import { tokenDevice } from 'src/app/core/models/token-device.model';
+import { ROLES } from 'src/app/shared/constants/roles.constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -28,13 +30,16 @@ export class HomePage implements OnInit {
   icons = ICONS;
   messages = MESSAGES;
   toastConst = TOAST_CONST;
-
   utilsService = inject(UtilsService);
   storageService = inject(StorageService);
   notificationService = inject(NotificationPushService);
+  router: Router = inject(Router);
   isToastOpen = false;
+  roles = ROLES;
 
-
+  goToRegister() {
+    this.router.navigateByUrl('home/register-data');
+  }
 
   user!: UserLoginModel | null;
   constructor() {
