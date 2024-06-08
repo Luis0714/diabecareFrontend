@@ -91,8 +91,8 @@ export class CreatePlanComponent  implements OnInit {
 
   getProfessionalId() {
     this.getUserLogged();
-    this.professionalService.getHealthProfessionalById(this.professionalUserId).subscribe((professional) => {
-      this.professionalId = professional.data;
+    this.professionalService.getHealthProfessionalById(this.professionalUserId).subscribe((response) => {
+      this.professionalId = response.data.profesionalSaludId;
     });
   }
 
