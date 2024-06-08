@@ -40,7 +40,7 @@ export class ListPatientsComponent  implements OnInit {
   getPatients() {
     if(this.user) {
       this.patientsService.getPatientsByUserProfesional(this.user.id).subscribe((response) => {
-        this.patients = response.data;
+        this.patients = response.data;        
       });
     }
   }
