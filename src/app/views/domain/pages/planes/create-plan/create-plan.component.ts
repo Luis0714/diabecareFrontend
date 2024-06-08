@@ -85,14 +85,14 @@ export class CreatePlanComponent  implements OnInit {
     console.log(this.patientId);
 
     this.patientService.getPatientById(this.patientId).subscribe((patient) => {
-      this.patientName = patient.data.full_name;
+      this.patientName = patient.data.nombre + ' ' + patient.data.apellidos;
     });
   }
 
   getProfessionalId() {
     this.getUserLogged();
     this.professionalService.getHealthProfessionalById(this.professionalUserId).subscribe((professional) => {
-      this.professionalId = professional.data;
+      this.professionalId = professional.data.profesionalSaludId;
     });
   }
 
