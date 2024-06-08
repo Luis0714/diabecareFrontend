@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { DataHistory, DataHistoryCreate, Patient } from '../models/patient.model';
 import { CustomResponse } from '../models/customresponse.models';
+import { UserLoginModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class PatientsService {
     return this.http.get<CustomResponse<Patient[]>>(`${this.url}/patients_by_health_professional/${userId}`);
   }
 
-  getPatientById(patientId: number): Observable<any> {
-    return this.http.get(`${this.url}/patient_by_id/${patientId}`);
+  getPatientById(patientId: number): Observable<CustomResponse<UserLoginModel>> {
+    return this.http.get<CustomResponse<UserLoginModel>>(`${this.url}/patient_by_id/${patientId}`);
   }
 
   createDataHistory(dataHistory: DataHistoryCreate): Observable<CustomResponse<DataHistory>>{
