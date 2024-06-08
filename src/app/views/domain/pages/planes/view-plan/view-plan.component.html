@@ -1,13 +1,19 @@
-<app-custom-header title=""/>
+<app-custom-header title="" />
 <ion-content class="content">
   <div class="title">
     <ion-icon class="icon" [name]="icons.planes" />
     <span class="title-text">Planes</span>
   </div>
-  <!-- solo es un ejemplo de como se hara el for de las cartas -->
-  @for (plan of plans; track plan.planId){
-  <app-custom-card-plan [plan]="plan"/>
- }
+  <div class="container_cards">
+    @for (plan of plans; track plan.planId){
+    <app-custom-card-plan [plan]="plan" />
+    } @empty {
+    <div class="container_empty">
+      <app-custom-not-found message="No tienes planes asignados">
+      </app-custom-not-found>
+    </div>
+    }
+  </div>
 </ion-content>
 <ion-footer collapse="fade">
   <ion-toolbar>
