@@ -15,7 +15,7 @@ export class PdfService {
 
   url = `${this.server}/pacientes`;
 
-  generateReport(patientId: number): Observable<Blob> {
-    return this.http.get(`${this.url}/generate_report/${patientId}`, { responseType: 'blob' });
+  generateReport(patientId: number, professionalUserId: number): Observable<Blob> {
+    return this.http.get(`${this.url}/generate_report/${patientId}/${professionalUserId}`, { responseType: 'blob' });
   }
 }

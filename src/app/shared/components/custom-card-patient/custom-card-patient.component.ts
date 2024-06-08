@@ -11,6 +11,8 @@ import { COLORS } from '../../constants/colors.constans';
 import { AgePipe } from '../../pipes/age.pipe';
 import { HoursPipe } from '../../pipes/hours.pipe';
 import { PdfService } from 'src/app/core/services/pdf.service';
+import { StorageService } from 'src/app/core/services/storage.service';
+import { UserLoginModel } from 'src/app/core/models/user.model';
 
 @Component({
   selector: 'app-custom-card-patient',
@@ -40,14 +42,26 @@ export class CustomCardPatientComponent  implements OnInit {
   icons = ICONS;
   colors = COLORS;
   router = inject(Router);
-  ngOnInit() { }
+  storageService = inject(StorageService);
+  user: UserLoginModel | null = null;
+  
+  constructor() { }
+
+  ngOnInit() {
+    this.getUserLogged();
+   }
 
   createPlan(){
     this.router.navigateByUrl(`home/create-plan/${this.patient.patientId}`);
   }
 
+  getUserLogged() {
+    this.user =  this.storageService.getUser();
+  }
+
   generateReport() {
-    this.pdfService.generateReport(this.patient.patientId).subscribe((response: Blob) => {
+    if (this.user) {
+    this.pdfService.generateReport(this.patient.patientId, this.user?.id).subscribe((response: Blob) => {
       const a = document.createElement('a');
       const objectUrl = URL.createObjectURL(response);
       a.href = objectUrl;
@@ -59,6 +73,7 @@ export class CustomCardPatientComponent  implements OnInit {
     }, error => {
       console.error('Error al generar el reporte', error);
     });
+  }
   }
 
   todayDate() {
