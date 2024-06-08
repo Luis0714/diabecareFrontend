@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { StorageService } from './storage.service';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { DataHistory, DataHistoryCreate, Patient } from '../models/patient.model';
+import { DataHistory, DataHistoryCreate, Patient, PatientBackend } from '../models/patient.model';
 import { CustomResponse } from '../models/customresponse.models';
 import { UserLoginModel } from '../models/user.model';
 
@@ -18,8 +18,8 @@ export class PatientsService {
 
   url = `${this.server}/pacientes`;
 
-  getPatientsByUserProfesional(userId: number): Observable<CustomResponse<Patient[]>> {
-    return this.http.get<CustomResponse<Patient[]>>(`${this.url}/patients_by_health_professional/${userId}`);
+  getPatientsByUserProfesional(userId: number): Observable<CustomResponse<PatientBackend[]>> {
+    return this.http.get<CustomResponse<PatientBackend[]>>(`${this.url}/patients_by_health_professional/${userId}`);
   }
 
   getPatientById(patientId: number): Observable<CustomResponse<UserLoginModel>> {
