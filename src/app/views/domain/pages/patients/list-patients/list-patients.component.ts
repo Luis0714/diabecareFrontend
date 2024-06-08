@@ -40,7 +40,20 @@ export class ListPatientsComponent  implements OnInit {
   getPatients() {
     if(this.user) {
       this.patientsService.getPatientsByUserProfesional(this.user.id).subscribe((response) => {
-        this.patients = response.data;
+        for (const patient of response.data) {
+          this.patients.push({
+            patientId: patient.patient_id,
+            name: patient.name,
+            lastName: patient.last_name,
+            photo: patient.photo,
+            date: patient.date,
+            age: patient.age,
+            glucoseLevel: patient.glucose_level,
+            lastMedication: patient.last_medication,
+            lastMeal: patient.last_meal,
+            physicalActivityHours: patient.physical_activity_hours
+          });
+        }
       });
     }
   }
