@@ -81,9 +81,8 @@ export class CreatePlanComponent  implements OnInit {
   }
 
   getInfoPatient() {
-    this.patientId = parseInt(this.route.snapshot.paramMap.get('patientId') || '0');
+    this.patientId = parseInt(this.route.snapshot.paramMap.get('patientId') ?? '0');
     console.log(this.patientId);
-
     this.patientService.getPatientById(this.patientId).subscribe((patient) => {
       this.patientName = patient.data.full_name;
     });
