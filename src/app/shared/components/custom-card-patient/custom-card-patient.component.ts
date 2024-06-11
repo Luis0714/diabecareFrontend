@@ -2,7 +2,7 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/core/models/patient.model';
 import {IonCard, IonCardSubtitle, IonCardTitle,
-        IonCardHeader, IonCardContent, IonIcon } from '@ionic/angular/standalone';
+        IonCardHeader, IonCardContent, IonIcon, IonToast } from '@ionic/angular/standalone';
 import { CustomButtonComponent } from '../custom-button/custom-button.component';
 import { DatePipe } from '../../pipes/date.pipe';
 import { GlucosePipe } from '../../pipes/glucose.pipe';
@@ -13,13 +13,14 @@ import { HoursPipe } from '../../pipes/hours.pipe';
 import { PdfService } from 'src/app/core/services/pdf.service';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { UserLoginModel } from 'src/app/core/models/user.model';
+import { MESSAGES } from '../../constants/messages.constants';
 
 @Component({
   selector: 'app-custom-card-patient',
   templateUrl: './custom-card-patient.component.html',
   styleUrls: ['./custom-card-patient.component.scss'],
   standalone: true,
-  imports: [IonIcon,
+  imports: [IonToast, IonIcon,
     IonCard,
     IonCardSubtitle,
     IonCardTitle,
@@ -35,8 +36,6 @@ import { UserLoginModel } from 'src/app/core/models/user.model';
 })
 export class CustomCardPatientComponent  implements OnInit {
   pdfService = inject(PdfService);
-  x: String = '';
-  y: String = '';
 
   @Input({required: true}) patient!: Patient;
   icons = ICONS;
@@ -44,8 +43,18 @@ export class CustomCardPatientComponent  implements OnInit {
   router = inject(Router);
   storageService = inject(StorageService);
   user: UserLoginModel | null = null;
+  message: string = '';
   
   constructor() { }
+  
+  isToastOpen = false;
+  setOpen(isOpen: boolean) {
+    this.isToastOpen = isOpen;
+  }
+  showToast() {
+    this.message = MESSAGES.success.generateReport;
+    this.setOpen(true);
+  }
 
   ngOnInit() {
     this.getUserLogged();
@@ -70,6 +79,7 @@ export class CustomCardPatientComponent  implements OnInit {
       console.log(objectUrl);
       a.click();
       URL.revokeObjectURL(objectUrl);
+      this.showToast();
     }, error => {
       console.error('Error al generar el reporte', error);
     });

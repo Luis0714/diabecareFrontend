@@ -13,6 +13,6 @@ export const MESSAGES = {
   },
   success: {
     createPlan: '¡Tu plan ha sido creado exitosamente!',
-    addRecommendation: '¡Recomendación agregada exitosamente!'
-  }
+    addRecommendation: '¡Recomendación agregada exitosamente!',
+    generateReport: '¡Reporte generado exitosamente!'}
 }
