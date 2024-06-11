@@ -41,6 +41,7 @@ import { CustomNotFoundComponent } from 'src/app/shared/components/custom-not-fo
     CustomCardPlanComponent,
     CustomNotFoundComponent,
   ],
+  viewProviders: [PersonalizedPlanService, StorageService],
 })
 export class ViewPlanComponent implements OnInit {
   plans: PersonalizedPlanResponse[] = [];
@@ -58,8 +59,8 @@ export class ViewPlanComponent implements OnInit {
     const iduser = this.storageService.getUser()?.id;
     this.personalizedPlansService
       .getPersonalizedPlans(iduser)
-      .subscribe((data) => {
-        this.plans = data.data;
+      .subscribe((response) => {
+        this.plans = response.data;
       });
   }
 }

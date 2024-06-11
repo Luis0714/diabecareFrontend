@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { StorageService } from './storage.service';
 import { environment } from 'src/environments/environment';
 import { PersonalizedPlan, PersonalizedPlanResponse } from '../models/personalized-plan.model';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { CustomResponse } from '../models/customresponse.models';
 
 @Injectable({
@@ -21,6 +21,13 @@ export class PersonalizedPlanService {
   }
 
   getPersonalizedPlans(iduser: number|undefined): Observable<CustomResponse<PersonalizedPlanResponse[]>> {
-    return this.http.get<CustomResponse<PersonalizedPlanResponse[]>>(`${this.url}/planes_personalizados/${iduser}`);
-  }
+      return this.http.get<CustomResponse<PersonalizedPlanResponse[]>>(`${this.url}/planes_personalizados/${iduser}`).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 404) {
+            return of({ data: [], statusCode: 404, message: 'Not Found' });
+          }
+          throw error;
+        })
+      );
+    }
 }

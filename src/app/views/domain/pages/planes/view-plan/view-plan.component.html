@@ -7,11 +7,8 @@
   <div class="container_cards">
     @for (plan of plans; track plan.planId){
     <app-custom-card-plan [plan]="plan" />
-    } @empty {
-    <div class="container_empty">
-      <app-custom-not-found message="No tienes planes asignados">
-      </app-custom-not-found>
-    </div>
+    } @if (plans.length === 0){
+    <app-custom-not-found message="No tienes planes disponibles" />
     }
   </div>
 </ion-content>
