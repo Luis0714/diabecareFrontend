@@ -14,7 +14,7 @@ import { CustomNotFoundComponent } from 'src/app/shared/components/custom-not-fo
   templateUrl: './list-patients.component.html',
   styleUrls: ['./list-patients.component.scss'],
   standalone: true,
-  imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar, 
+  imports: [IonTitle, IonContent, CustomHeaderComponent, CustomFooterComponent, IonFooter, IonToolbar,
   CustomCardPatientComponent, IonSelect, IonSelectOption, IonLabel, IonItem, IonList, CustomNotFoundComponent]
 })
 export class ListPatientsComponent  implements OnInit {
@@ -24,7 +24,7 @@ export class ListPatientsComponent  implements OnInit {
   patients: Patient[] = [];
   filter: string = 'all';
 
-  constructor() { 
+  constructor() {
     this.getUserLogged();
   }
 
@@ -39,7 +39,7 @@ export class ListPatientsComponent  implements OnInit {
 
   getPatients() {
     if(this.user) {
-      this.patientsService.getPatientsByUserProfesional(this.user.id).subscribe((response) => {
+      this.patientsService.getPatientsByUserProfessional(this.user.id).subscribe((response) => {
         for (const patient of response.data) {
           this.patients.push({
             patientId: patient.patient_id,
@@ -60,7 +60,7 @@ export class ListPatientsComponent  implements OnInit {
 
   onSelectChange(event: any) {
     this.filter = event.detail.value;
-    
+
     switch (this.filter) {
       case 'date':
         this.patients.sort((a, b) => {
@@ -80,6 +80,6 @@ export class ListPatientsComponent  implements OnInit {
         });
         break;
     }
-    
+
   }
 }

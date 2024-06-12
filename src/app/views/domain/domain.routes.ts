@@ -10,8 +10,7 @@ export const DOMAIN_ROUTES: Routes = [
     children: [
       {
         path: 'eduContent',
-        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
-        canActivate: [loginGuard]
+        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage)
       },
       {
         path: '',

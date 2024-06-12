@@ -18,7 +18,7 @@ export class PatientsService {
 
   url = `${this.server}/pacientes`;
 
-  getPatientsByUserProfesional(userId: number): Observable<CustomResponse<PatientBackend[]>> {
+  getPatientsByUserProfessional(userId: number): Observable<CustomResponse<PatientBackend[]>> {
     return this.http.get<CustomResponse<PatientBackend[]>>(`${this.url}/patients_by_health_professional/${userId}`);
   }
 
