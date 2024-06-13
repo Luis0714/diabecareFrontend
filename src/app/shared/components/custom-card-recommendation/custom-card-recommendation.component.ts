@@ -10,14 +10,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard,CommonModule ]
 })
-export class CustomCardRecommendationComponent  implements OnInit {
+export class CustomCardRecommendationComponent {
 
   @Input ({required: true}) recommendation!: RecommendationViewModel;
 
 
   constructor() { }
 
-  ngOnInit() {}
 
   setColorState(estado: string): string {
     if (estado === 'Sin realizar') {
@@ -37,6 +36,13 @@ export class CustomCardRecommendationComponent  implements OnInit {
     } else {
       return 'color-state-text-En-proceso';
     }
+  }
+
+  convertToTime(dateString: string): Date {
+    const [hours, minutes, seconds] = dateString.split(':').map(Number);
+    const now = new Date();
+    now.setHours(hours, minutes, seconds, 0);
+    return now;
   }
 
 

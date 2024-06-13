@@ -5,12 +5,11 @@
         <h3>
           {{ recommendation.titulo }}
         </h3>
-        <span class="date-exec">{{ recommendation.horaEjecucion }}</span>
+        <span class="date-exec">{{ convertToTime( recommendation.horaEjecucion) | date:'shortTime'}}</span>
       </div>
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-   <p>{{ recommendation.actividad }}</p> 
    <div class="state-content">
     <div
       class="state-recommendation"

@@ -5,7 +5,7 @@
     <span class="title-text">Planes</span>
   </div>
   <div class="container_cards">
-    @for (plan of plans; track plan.planId){
+    @for (plan of plans; track plan.plan_Id){
     <app-custom-card-plan [plan]="plan" />
     } @if (plans.length === 0){
     <app-custom-not-found message="No tienes planes disponibles" />

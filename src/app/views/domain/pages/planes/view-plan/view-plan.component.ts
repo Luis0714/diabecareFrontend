@@ -56,9 +56,9 @@ export class ViewPlanComponent implements OnInit {
   }
 
   get_plans() {
-    const iduser = this.storageService.getUser()?.id;
+    const userId = this.storageService.getUser()?.id;
     this.personalizedPlansService
-      .getPersonalizedPlans(iduser)
+      .getPersonalizedPlans(userId)
       .subscribe((response) => {
         this.plans = response.data;
       });
