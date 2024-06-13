@@ -128,11 +128,11 @@ export class CreatePlanComponent  implements OnInit {
       this.planService.createPersonalizedPlan(plan).subscribe((response: any) => {
         if (response.data) {
           console.log('Plan creado');
-          this.router.navigate(['/home/patients']);
           this.showToast();
-          console.log(this.isToastOpen);
+          setTimeout(() => {
+            this.router.navigate(['/home/patients']);
+          }, 4000); 
           this.recommendation_count = 0;
-          
         }
       });
     }else{

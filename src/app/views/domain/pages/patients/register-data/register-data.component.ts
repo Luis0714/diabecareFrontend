@@ -56,8 +56,10 @@ export class RegisterDataComponent {
 
   validateResponse(response: CustomResponse<DataHistory>) {
     if(response.statusCode === 201) {
-      this.setOpen(true, response.message, 'success');
-      this.navigateToHome();
+      this.setOpen(true, response.message, 'medium');
+      setTimeout(() => {
+        this.navigateToHome();
+      }, 4000); 
     }else {
       this.setOpen(true, response.message, 'danger');
     }
