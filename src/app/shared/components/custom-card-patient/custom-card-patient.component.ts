@@ -104,9 +104,6 @@ export class CustomCardPatientComponent implements OnInit {
       // Obtener la ruta del archivo guardado
       const filePath = savedFile.uri;
 
-      // Abrir el archivo PDF utilizando el plugin Browser de Capacitor
-      await Browser.open({ url: filePath });
-
       this.showToast();
       });
     }
