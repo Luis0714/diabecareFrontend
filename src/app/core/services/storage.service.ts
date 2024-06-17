@@ -32,7 +32,7 @@ export class StorageService {
   saveUser(user: UserLoginModel){
     localStorage.setItem('user', JSON.stringify(user));
     console.log("User saved", user);
-    
+
   }
 
   getUser(): UserLoginModel | null {
@@ -44,6 +44,8 @@ export class StorageService {
   }
 
   clearStorage(){
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     localStorage.clear();
   }
 }
