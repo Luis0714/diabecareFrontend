@@ -96,7 +96,7 @@ export class CustomCardPatientComponent implements OnInit {
 
       const savedFile = await Filesystem.writeFile({
         path: fileName,
-        data: response,
+        data: base64Data,
         directory: Directory.Documents,
         encoding: Encoding.UTF8
       });
