@@ -91,17 +91,21 @@ export class CustomCardPatientComponent implements OnInit {
       if (this.user) {
       this.pdfService.generateReport(this.patient.patientId, this.user.id).subscribe(async (response: Blob) => { 
       const base64Data = await this.convertBlobToBase64(response);
-      const dataUrl = `data:application/pdf;base64,${base64Data}`;
       const date = this.todayDate();
       const fileName = `Reporte_${date}_${this.patient.name}_${this.patient.lastName}.pdf`;
 
-      // Crear un enlace temporal para descargar el archivo PDF
-      const link = document.createElement('a');
-      link.href = dataUrl;
-      link.setAttribute('download', fileName);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      const savedFile = await Filesystem.writeFile({
+        path: fileName,
+        data: response,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8
+      });
+
+      // Obtener la ruta del archivo guardado
+      const filePath = savedFile.uri;
+
+      // Abrir el archivo PDF utilizando el plugin Browser de Capacitor
+      await Browser.open({ url: filePath });
 
       this.showToast();
       });
