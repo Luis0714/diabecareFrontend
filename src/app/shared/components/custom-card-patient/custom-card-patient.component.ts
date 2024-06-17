@@ -89,24 +89,23 @@ export class CustomCardPatientComponent implements OnInit {
   async generateReportForMobile() {
     try {
       if (this.user) {
-        const response = await this.pdfService.generateReport(this.patient.patientId, this.user?.id).toPromise();
+      this.pdfService.generateReport(this.patient.patientId, this.user.id).subscribe(async (response: Blob) => { 
+      const base64Data = await this.convertBlobToBase64(response);
+      const dataUrl = `data:application/pdf;base64,${base64Data}`;
+      const date = this.todayDate();
+      const fileName = `Reporte_${date}_${this.patient.name}_${this.patient.lastName}.pdf`;
 
-        if (response) {
-          const base64Data = await this.convertBlobToBase64(response);
-          const filePath = `Reporte_${this.todayDate()}_${this.patient.name}_${this.patient.lastName}.pdf`;
+      // Crear un enlace temporal para descargar el archivo PDF
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.setAttribute('download', fileName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-          const result = await Filesystem.writeFile({
-            path: filePath,
-            data: base64Data,
-            directory: Directory.Documents,
-            encoding: Encoding.UTF8,
-          });
-
-          console.log('Download complete: ' + filePath);
-          this.showToast();
-          await Browser.open({ url: result.uri });
-        }
-      }
+      this.showToast();
+      });
+    }
     } catch (error) {
       console.error('Error al generar el reporte', error);
     }
