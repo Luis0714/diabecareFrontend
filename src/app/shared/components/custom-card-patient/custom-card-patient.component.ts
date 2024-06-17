@@ -1,8 +1,10 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/core/models/patient.model';
-import {IonCard, IonCardSubtitle, IonCardTitle,
-        IonCardHeader, IonCardContent, IonIcon, IonToast } from '@ionic/angular/standalone';
+import {
+  IonCard, IonCardSubtitle, IonCardTitle,
+  IonCardHeader, IonCardContent, IonIcon, IonToast
+} from '@ionic/angular/standalone';
 import { CustomButtonComponent } from '../custom-button/custom-button.component';
 import { DatePipe } from '../../pipes/date.pipe';
 import { GlucosePipe } from '../../pipes/glucose.pipe';
@@ -14,6 +16,9 @@ import { PdfService } from 'src/app/core/services/pdf.service';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { UserLoginModel } from 'src/app/core/models/user.model';
 import { MESSAGES } from '../../constants/messages.constants';
+import { Platform } from '@ionic/angular';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-custom-card-patient',
@@ -34,19 +39,22 @@ import { MESSAGES } from '../../constants/messages.constants';
     HoursPipe
   ]
 })
-export class CustomCardPatientComponent  implements OnInit {
+export class CustomCardPatientComponent implements OnInit {
   pdfService = inject(PdfService);
+  private platform = inject(Platform);
 
-  @Input({required: true}) patient!: Patient;
+  @Input({ required: true }) patient!: Patient;
   icons = ICONS;
   colors = COLORS;
   router = inject(Router);
   storageService = inject(StorageService);
   user: UserLoginModel | null = null;
   message: string = '';
-  
-  constructor() { }
-  
+
+  constructor() {
+
+  }
+
   isToastOpen = false;
   setOpen(isOpen: boolean) {
     this.isToastOpen = isOpen;
@@ -58,37 +66,102 @@ export class CustomCardPatientComponent  implements OnInit {
 
   ngOnInit() {
     this.getUserLogged();
-   }
+  }
 
-  createPlan(){
+  createPlan() {
     this.router.navigateByUrl(`home/create-plan/${this.patient.patientId}`);
   }
 
   getUserLogged() {
-    this.user =  this.storageService.getUser();
+    this.user = this.storageService.getUser();
   }
 
-  generateReport() {
+  async generateReport() {
     if (this.user) {
-    this.pdfService.generateReport(this.patient.patientId, this.user?.id).subscribe((response: Blob) => {
-      const a = document.createElement('a');
-      const objectUrl = URL.createObjectURL(response);
-      a.href = objectUrl;
-      let date = this.todayDate();
-      a.download = `Reporte_${date}_${this.patient.name} ${this.patient.lastName}.pdf`;
-      console.log(objectUrl);
-      a.click();
-      URL.revokeObjectURL(objectUrl);
-      this.showToast();
-    }, error => {
+      if (this.platform.is('capacitor')) {
+        await this.generateReportForMobile();
+      } else {
+        this.generateReportForWeb();
+      }
+    }
+  }
+
+  async generateReportForMobile() {
+    try {
+      if (this.user) {
+        const response = await this.pdfService.generateReport(this.patient.patientId, this.user?.id).toPromise();
+
+        if (response) {
+          const base64Data = await this.convertBlobToBase64(response);
+          const filePath = `Reporte_${this.todayDate()}_${this.patient.name}_${this.patient.lastName}.pdf`;
+
+          const result = await Filesystem.writeFile({
+            path: filePath,
+            data: base64Data,
+            directory: Directory.Documents,
+            encoding: Encoding.UTF8,
+          });
+
+          console.log('Download complete: ' + filePath);
+          this.showToast();
+          await Browser.open({ url: result.uri });
+        }
+      }
+    } catch (error) {
       console.error('Error al generar el reporte', error);
+    }
+  }
+
+  async convertBlobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result as string);
+      };
+      reader.readAsDataURL(blob);
     });
   }
+
+  generateReportForWeb() {
+    if (this.user) {
+      this.pdfService.generateReport(this.patient.patientId, this.user?.id).subscribe((response: Blob) => {
+        const a = document.createElement('a');
+        const objectUrl = URL.createObjectURL(response);
+        a.href = objectUrl;
+        let date = this.todayDate();
+        a.download = `Reporte_${date}_${this.patient.name} ${this.patient.lastName}.pdf`;
+        console.log(objectUrl);
+        a.click();
+        URL.revokeObjectURL(objectUrl);
+        this.showToast();
+      }, error => {
+        console.error('Error al generar el reporte', error);
+      });
+    }
   }
+
+  // generateReport() {
+  //   if (this.user) {
+  //   this.pdfService.generateReport(this.patient.patientId, this.user?.id).subscribe((response: Blob) => {
+  //     const a = document.createElement('a');
+  //     const objectUrl = URL.createObjectURL(response);
+  //     a.href = objectUrl;
+  //     let date = this.todayDate();
+  //     a.download = `Reporte_${date}_${this.patient.name} ${this.patient.lastName}.pdf`;
+  //     console.log(objectUrl);
+  //     a.click();
+  //     URL.revokeObjectURL(objectUrl);
+  //     this.showToast();
+  //   }, error => {
+  //     console.error('Error al generar el reporte', error);
+  //   });
+  // }
+  // }
 
   todayDate() {
     let currentDate = new Date();
-    let formattedDate = `${currentDate.getDate()}-${currentDate.getMonth()+1}-${currentDate.getFullYear()}`;
+    let formattedDate = `${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
     return formattedDate;
   }
 }
