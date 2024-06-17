@@ -104,7 +104,7 @@ export class CustomCardPatientComponent implements OnInit {
 
           console.log('Download complete: ' + filePath);
           this.showToast();
-          await Browser.open({ url: result.uri });
+          // await Browser.open({ url: result.uri });
         }
       }
     } catch (error) {
