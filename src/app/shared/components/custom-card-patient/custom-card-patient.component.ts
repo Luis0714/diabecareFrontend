@@ -18,6 +18,7 @@ import { UserLoginModel } from 'src/app/core/models/user.model';
 import { MESSAGES } from '../../constants/messages.constants';
 import { Platform } from '@ionic/angular';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-custom-card-patient',
@@ -94,7 +95,7 @@ export class CustomCardPatientComponent implements OnInit {
           const base64Data = await this.convertBlobToBase64(response);
           const filePath = `Reporte_${this.todayDate()}_${this.patient.name}_${this.patient.lastName}.pdf`;
 
-          await Filesystem.writeFile({
+          const result = await Filesystem.writeFile({
             path: filePath,
             data: base64Data,
             directory: Directory.Documents,
@@ -103,6 +104,7 @@ export class CustomCardPatientComponent implements OnInit {
 
           console.log('Download complete: ' + filePath);
           this.showToast();
+          await Browser.open({ url: result.uri });
         }
       }
     } catch (error) {
