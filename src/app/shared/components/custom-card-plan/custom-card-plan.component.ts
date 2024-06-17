@@ -13,15 +13,13 @@ import { DatePipe } from '../../pipes/date.pipe';
   standalone: true,
   imports: [IonIcon, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard,CustomButtonComponent,DatePipe]
 })
-export class CustomCardPlanComponent  implements OnInit {
+export class CustomCardPlanComponent {
   @Input ({required: true}) plan!: PersonalizedPlanResponse;
 
   router = inject(Router);
 
-  ngOnInit() {}
-
   goToRecommendations(){
-    this.router.navigateByUrl(`/home/view-recommendations/${this.plan.planId}`);
+    this.router.navigateByUrl(`/home/view-recommendations/${this.plan.plan_Id}`);
   }
 
 }

@@ -7,7 +7,7 @@ export interface PersonalizedPlan {
 }
 
 export interface PersonalizedPlanResponse {
-    planId: number;
+    plan_Id: number;
     creation_date: string;
     full_name_professional: string;
 }

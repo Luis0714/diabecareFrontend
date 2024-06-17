@@ -20,8 +20,8 @@ export class PersonalizedPlanService {
     return this.http.post(`${this.url}/planes_personalizados`, plan);
   }
 
-  getPersonalizedPlans(iduser: number|undefined): Observable<CustomResponse<PersonalizedPlanResponse[]>> {
-      return this.http.get<CustomResponse<PersonalizedPlanResponse[]>>(`${this.url}/planes_personalizados/${iduser}`).pipe(
+  getPersonalizedPlans(userId: number|undefined): Observable<CustomResponse<PersonalizedPlanResponse[]>> {
+      return this.http.get<CustomResponse<PersonalizedPlanResponse[]>>(`${this.url}/planes_personalizados/${userId}`).pipe(
         catchError((error: HttpErrorResponse) => {
           if (error.status === 404) {
             return of({ data: [], statusCode: 404, message: 'Not Found' });

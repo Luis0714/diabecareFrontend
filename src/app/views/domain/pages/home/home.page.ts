@@ -58,8 +58,6 @@ export class HomePage implements OnInit {
       token: token,
       userId: userId
     };
-    console.log("send save token");
-    console.log(tokenDevice);
     this.notificationService.saveTokenDevice(tokenDevice).subscribe((response) => {
       console.log("response save token", response);
     });
